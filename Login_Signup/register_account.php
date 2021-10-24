@@ -13,10 +13,8 @@
     $place = $_POST['place'];
     $quantity = $_POST['quantity'];
 
-    include '../connect.php';
-    $sql = "INSERT INTO medicine ('name', 'type', barcode, dose, code, cost_price, selling_price, expiry, company_name, production_date, expiration_date, place, quantity)
-    VALUE ('$name', '$type', '$barcode', '$dose', '$code', '$cost_price', '$selling_price', '$expiry', '$company_name'
-    , '$production_date', '$expiration_date', '$place', '$quantity')";
+    include '../config/config.php';
+    $sql = "INSERT INTO user (user_name, email_user, passwd_user) VALUES ()
 
     $result = mysqli_query($conn, $sql);
     if($result > 0){
