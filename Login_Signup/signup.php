@@ -11,7 +11,7 @@ include "../header_file.php";
               <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                  <form class="mx-1 mx-md-4">
+                  <form class="mx-1 mx-md-4" method="post" class="form">
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
