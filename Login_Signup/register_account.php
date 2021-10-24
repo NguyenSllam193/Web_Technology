@@ -10,8 +10,7 @@
     if($result > 0){
         header("Location:../index.php");
     }else{
-        echo "Lỗi";
+        echo "Lỗii";
     }
-
     mysqli_close($conn);
 ?>
