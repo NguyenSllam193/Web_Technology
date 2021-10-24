@@ -23,8 +23,8 @@ include "../header_file.php";
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="user_email">Your Email</label>
-                        <input type="email" id="user_email" name ="user_email" class="form-control" />
+                        <label class="form-label" for="email_user">Your Email</label>
+                        <input type="email" id="email_user" name ="email_user" class="form-control" />
                       </div>
                     </div>
 
