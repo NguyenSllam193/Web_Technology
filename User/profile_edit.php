@@ -9,8 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.scss">
-    <link rel="stylesheet" href="../css/style_profile.css">
+    <link rel="stylesheet" href="./scss/style.scss">
+    <link rel="stylesheet" href="../css/style_profile_user.css">
 </head>
 
 <body class="bg-primary">
@@ -56,34 +56,41 @@
                     }
 
                     ?>
+
+
                         <div class="row mt-3">
 
-                            <div class="col-md-12"><label class="labels">Fullname: </label>
+                            <div class="col-md-12"><label class="labels">Fullname</label>
                                 <h5><?php echo $name; ?></h5>
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Date of birth:</label>
-                                <h5><?php echo $date; ?></h5>
+                            <div class="col-md-12"><label class="labels">Date of birth</label>
+                                <input type="text" class="form-control" id="date" name="date"
+                                    value="<?php echo $date; ?>">
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Gender:</label>
-                                <h5><?php echo $gt; ?></h5>
+                            <div class="col-md-12"><label class="labels">Gender</label>
+                                <input type="email" class="form-control" id="gt" name="gt" value="<?php echo $gt; ?>">
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Phone Number:</label>
-                                <h5><?php echo $phone; ?></h5>
+                            <div class="col-md-12"><label class="labels">Phone Number</label>
+                                <input type="text" class="form-control" id="phone" name="phone"
+                                    value="0<?php echo $phone; ?>">
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Email:</label>
-                                <h5><?php echo $email; ?></h5>
+                            <div class="col-md-12"><label class="labels">Email</label>
+                                <input type="text" class="form-control" id="email" name="email"
+                                    value="<?php echo $email; ?>">
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Address:</label>
-                                <h5><?php echo $addr; ?></h5>
+                            <div class="col-md-12"><label class="labels">Address</label>
+                                <input type="text" class="form-control" id="addr" name="addr"
+                                    value="<?php echo $addr; ?>">
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Country:</label>
-                                <h5><?php echo $coun; ?></h5>
+                            <div class="col-md-12"><label class="labels">Country</label>
+                                <input type="text" class="form-control" id="coun" name="coun"
+                                    value="<?php echo $coun; ?>">
                             </div>
                         </div>
 
@@ -109,7 +116,7 @@
         </form>
     </div>
 
-    <?php include "../footer_file.php";
+<?php include "../footer_file.php";
 
 if(isset($_POST['submit']))
 {
