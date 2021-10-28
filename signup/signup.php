@@ -28,11 +28,10 @@ require('../config/config.php');
     $query = "INSERT into `tbl_user` (user_name, user_pass, user_fullname, user_email, user_gender, user_birth) VALUES ('$username', '".md5($password)."', '$fullname ','$email', '$gender', '$birthday')";
       if($password == $repeat_pass){
         $result = mysqli_query($conn,$query);
-      }else{echo "alert('sai con me may mat khau roi')";}
- 
-       if($result){
+                 if($result){
             echo "<div class='form'><h3>Bạn đã đăng ký thành công</h3><br/>Click để <a href='../login/login.php'>Đăng nhập</a></div>";
         }
+      }else{echo "alert('sai con me may mat khau roi')";}
     }else
 ?>
   <section class="vh-100" style="background-color: #eee;">
