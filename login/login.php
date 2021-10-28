@@ -19,8 +19,9 @@ include "../header_file.php";
       $_SESSION['user_name'] = $username;
       header("Location: index.php");
             }else{
-        echo "<div class='form'><h3>Tên đăng nhập hoặc mật khẩu không đúng!</h3></br><a href='login.php'>Đăng nhập lại</a></div>";
-        }
+?>
+            <script type='text/javascript'>alert('mật khẩu sai cmmr');</script>
+<?php       }
     }else
 ?>
 
