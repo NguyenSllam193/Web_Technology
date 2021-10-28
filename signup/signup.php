@@ -19,10 +19,6 @@ require('../config/config.php');
       $repeat_pass =  stripslashes($_REQUEST['user_pass']);
       $repeat_pass = mysqli_real_escape_string($conn,$repeat_pass);
 
-      if($password != $repeat_pass){
-        echo "alert('sai con me may mat khau roi')";
-      }
-
     $gender = stripslashes($_REQUEST['user_gender']);
     $gender = mysqli_real_escape_string($conn,$gender);
 
@@ -30,8 +26,11 @@ require('../config/config.php');
     $birthday = mysqli_real_escape_string($conn,$birthday);
 
     $query = "INSERT into `tbl_user` (user_name, user_pass, user_fullname, user_email, user_gender, user_birth) VALUES ('$username', '".md5($password)."', '$fullname ','$email', '$gender', '$birthday')";
+      if($password == $repeat_pass){
         $result = mysqli_query($conn,$query);
-        if($result){
+      }else{echo "alert('sai con me may mat khau roi')";}
+ 
+       if($result){
             echo "<div class='form'><h3>Bạn đã đăng ký thành công</h3><br/>Click để <a href='../login/login.php'>Đăng nhập</a></div>";
         }
     }else
