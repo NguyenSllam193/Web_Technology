@@ -16,10 +16,7 @@
 <body class="bg-primary">
 
     <div class="container rounded bg-white mt-5 mb-5">
-        <form class="form" method="post">
-
             <div class="row">
-
                 <div class="col-md-3 border-right">
                     <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img
                             class="rounded-circle mt-5" width="150px"
@@ -37,7 +34,7 @@
                         <?php
                     $conn = mysqli_connect('localhost','root','','btl_web');
 
-                    $id= '1';
+                    $id= '2';
 
                     $sql = "SELECT * FROM tbl_profile WHERE id = $id";
 
@@ -46,8 +43,9 @@
                     if(mysqli_num_rows($res)==1){
                     $row = mysqli_fetch_assoc($res);
 
+                    $id = $row['id'];
                     $name = $row['fullname'];
-                    $date = $row['date'];
+                    $date = $row['datebirth'];
                     $gt = $row['gender'];
                     $phone = $row['phone'];
                     $email = $row['email'];
@@ -58,38 +56,40 @@
                     ?>
                         <div class="row mt-3">
 
-                            <div class="col-md-12"><label class="labels">Fullname: </label>
+                            <div class="col-md-12 pro"><label class="labels">Fullname: </label>
                                 <h5><?php echo $name; ?></h5>
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Date of birth:</label>
+                            <div class="col-md-12 pro"><label class="labels">Date of birth:</label>
                                 <h5><?php echo $date; ?></h5>
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Gender:</label>
+                            <div class="col-md-12 pro"><label class="labels">Gender:</label>
                                 <h5><?php echo $gt; ?></h5>
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Phone Number:</label>
-                                <h5><?php echo $phone; ?></h5>
+                            <div class="col-md-12 pro"><label class="labels">Phone Number:</label>
+                                <h5>0<?php echo $phone; ?></h5>
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Email:</label>
+                            <div class="col-md-12 pro"><label class="labels">Email:</label>
                                 <h5><?php echo $email; ?></h5>
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Address:</label>
+                            <div class="col-md-12 pro"><label class="labels">Address:</label>
                                 <h5><?php echo $addr; ?></h5>
                             </div>
 
-                            <div class="col-md-12"><label class="labels">Country:</label>
+                            <div class="col-md-12 pro"><label class="labels">Country:</label>
                                 <h5><?php echo $coun; ?></h5>
                             </div>
                         </div>
 
-                        <div class="mt-5 text-center"><button class="btn btn-primary " type="submit">Edit
-                                Profile</button>
+                        <div class="mt-5 text-center">
+                            <a href="profile_edit.php?id=<?php echo $id; ?>" class="btn btn-primary text-white">Edit
+                                Profile</a>
                         </div>
+
                     </div>
                 </div>
 
@@ -104,15 +104,7 @@
                                 class="form-control" placeholder="additional details" value=""></div>
                     </div>
                 </div>
-
             </div>
-        </form>
     </div>
 
-    <?php include "../footer_file.php";
-
-if(isset($_POST['submit']))
-{
-    header("Location:profile_edit.php");
-}
-?>
+<?php include("../footer_file.php");?>
