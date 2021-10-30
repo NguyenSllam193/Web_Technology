@@ -25,14 +25,15 @@ require('../config/config.php');
     $birthday = stripslashes($_REQUEST['user_birth']);
     $birthday = mysqli_real_escape_string($conn,$birthday);
 
-    $query = "INSERT into `tbl_user` (user_name, user_pass, user_fullname, user_email, user_gender, user_birth) VALUES ('$username', '".md5($password)."', '$fullname ','$email', '$gender', '$birthday')";
-      if($password == $repeat_pass){
+    if($password === $repeat_pass){
+        $query = "INSERT into `tbl_user` (user_name, user_pass, user_fullname, user_email, user_gender, user_birth) VALUES ('$username', '".md5($password)."', '$fullname ','$email', '$gender', '$birthday')";
         $result = mysqli_query($conn,$query);
-                 if($result){
-            echo "<div class='form'><h3>Bạn đã đăng ký thành công</h3><br/>Click để <a href='../login/login.php'>Đăng nhập</a></div>";
-        }
+        if($result){
+             echo "<div class='form'><h3>Bạn đã đăng ký thành công</h3><br/>Click để <a href='../login/login.php'>Đăng nhập</a></div>";
+         }
       }else{echo "alert('sai con me may mat khau roi')";}
-    }else
+
+    }else{
 ?>
   <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
@@ -142,7 +143,7 @@ require('../config/config.php');
     </div>
   </section>
 
-
+<?php  } ?>
 <?php
 include "../footer_file.php";
 ?>

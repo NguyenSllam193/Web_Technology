@@ -1,14 +1,17 @@
 <?php
-$db_host = "127.0.0.1";
-$db_user = "root";
-$db_passwd = "";
-$db_name = "web_btl";
-$db_gate = "80";
+    //Start Session
+    session_start();
 
-$conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
-if($conn){
-    mysqli_query($conn, "SET NAME 'utf8'");
-}else{
-    echo "Kết nối thất bại!".mysqli_connect_error();
-}
+
+    //Create Constants to Store Non Repeating Values
+    define('SITEURL', 'http://localhost/BTL/');
+    define('LOCALHOST', 'localhost');
+    define('DB_USERNAME', 'root');
+    define('DB_PASSWORD', '');
+    define('DB_NAME', 'web_btl');
+
+    $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD) or die(mysqli_error()); //Database Connection
+    $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //SElecting Database
+
+
 ?>
