@@ -374,7 +374,7 @@
                                                 <td><h4><?php echo $po_title;?></h4></td>
                                                 <td><?php echo $po_date;?></td>
                                                 <td><?php echo $us_name;?></td>
-                                                <td><a href="#" class="text-danger"><h5>xóa</h5></i></a> </td>
+                                                <td><a href="delete_post.php?po_id=<?php echo $po_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
                                             </tr>
                                             <?php  
                                            }
