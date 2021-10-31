@@ -110,7 +110,7 @@ include "config.php";
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg col-md-6" id="register" name="register">Register</button>
+                    <button type="submit" class="btn btn-primary btn-lg col-md-12" id="register" name="register">Register</button>
                   </div>
               </div>
             </div>
