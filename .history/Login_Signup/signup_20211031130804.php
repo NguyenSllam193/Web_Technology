@@ -1,6 +1,7 @@
+
 <?php
 include "../header_file.php";
-include('../config/config.php');
+include('../config.php');
     if (isset($_REQUEST['user_name'])){
     $username = stripslashes($_REQUEST['user_name']);
     $username = mysqli_real_escape_string($conn,$username);
@@ -141,6 +142,7 @@ include('../config/config.php');
     </div>
   </section>
 
-<?php  } 
+<?php  } ?>
+<?php
 include "../footer_file.php";
 ?>
