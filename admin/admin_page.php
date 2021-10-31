@@ -9,7 +9,7 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f75b956e9a.js" crossorigin="anonymous"></script>
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="./assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                         </form>
-                        <ul class="navbar-nav">
+                        <!-- <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link btn-magnify" href="javascript:;">
                                     <i class="nc-icon nc-layout-11"></i>
@@ -131,7 +131,7 @@
                                     </p>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </nav>
