@@ -40,11 +40,11 @@ include "config.php";
         <div class="card text-black" style="border-radius: 25px;">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
-              <p class="text-primary text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+              <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-              <div class="col-md-12 col-lg-6 col-xl-8 order-2 order-lg-1">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                 <form class="mx-1 mx-md-6" method="post" class="form">
-                  <div class="d-flex flex-row align-items-center mb-3">
+                  <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="user_name">Your Name</label>
@@ -52,7 +52,7 @@ include "config.php";
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-3">
+                  <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="user_fullname">Full Name</label>
@@ -68,7 +68,8 @@ include "config.php";
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center justify-content-between mb-3">
+
+                  <div class="d-flex flex-row align-items-center justify-content-between mb-4">
                     <span>Gender:</span>
                         <select name="user_gender">
                           <option value="Nam">Nam</option>
@@ -76,7 +77,7 @@ include "config.php";
                         </select>
                   </div>
 
-                  <div class="input-group justify-content-between mb-3">
+                  <div class="input-group justify-content-between">
                     <div class="col-md-5">
                       Date Of Birth
                     </div>
@@ -85,7 +86,7 @@ include "config.php";
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-3">
+                  <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="user_pass">Password</label>
@@ -93,7 +94,7 @@ include "config.php";
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-3">
+                  <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="password">Repeat your password</label>

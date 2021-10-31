@@ -28,7 +28,7 @@
             <div class="col-md-8 border-right">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">User Profile Settings</h4>
+                        <h4 class="text-right">Profile Settings</h4>
                     </div>
 
                     <div class="row mt-2">
@@ -58,7 +58,7 @@
                                 class="form-control" value="" placeholder="state"></div>
                     </div>
 
-                    <div class="mt-5 text-center "><button class="btn btn-primary col-md-6" type="button">Save Profile</button>
+                    <div class="mt-5 text-center"><button class="btn btn-primary " type="button">Save Profile</button>
                     </div>
                 </div>
             </div>

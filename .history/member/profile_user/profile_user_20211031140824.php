@@ -58,7 +58,7 @@
                                 class="form-control" value="" placeholder="state"></div>
                     </div>
 
-                    <div class="mt-5 text-center "><button class="btn btn-primary col-md-6" type="button">Save Profile</button>
+                    <div class="mt-5 text-center ps-3 pe-3"><button class="btn btn-primary " type="button">Save Profile</button>
                     </div>
                 </div>
             </div>
