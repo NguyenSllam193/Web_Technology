@@ -1,5 +1,6 @@
 <?php
 include('./head_file.php');
+
 require('./config.php');
     if (isset($_REQUEST['user_name'])){
     $username = stripslashes($_REQUEST['user_name']);
@@ -140,4 +141,8 @@ require('./config.php');
       </div>
     </div>
   </section>
+
 <?php  } ?>
+<?php
+include "../footer_file.php";
+?>
