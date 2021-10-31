@@ -36,19 +36,19 @@
 		<div class="main-content">
 			<div class="write-post-container">
 				<div class="post-input-container">
-					<textarea rows="2" placeholder="   What's on your mind?"></textarea>
+					<textarea rows="2" placeholder="What's on your mind?"></textarea>
 					<div class="add-post-links">
 						<a href="#">
 							<img src="images/live-video.png">
 							Live Video
 						</a>
 						<a href="#">
-							<img src="images/photo.png">
-							Photo/Video
-						</a>
-						<a href="#">
 							<img src="images/feeling.png">
 							Feeling/Activity
+						</a>
+						<a href="#">
+							<img src="images/photo.png">
+							<input type="file">
 						</a>
 					</div>
 				</div>

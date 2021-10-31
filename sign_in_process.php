@@ -26,7 +26,6 @@ if(isset($_POST['btnLogin']) && $_POST["txtAccount"] != '' && $_POST["txtPasswd"
     }
 
 }else{
-    echo "<h2>That Bai</h2>";
     header("Location: sign_in.php");
 }
 ?>
