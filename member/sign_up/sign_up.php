@@ -16,7 +16,7 @@ include "header_file.php";
                   <div class="d-flex flex-row align-items-center mb-3">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="user_name">Your Name</label>
+                      <label class="form-label" for="user_name">Your User Name  *</label>
                       <input type="text" id="user_name" name="user_name" class="form-control" />
                     </div>
                   </div>
@@ -24,7 +24,7 @@ include "header_file.php";
                   <div class="d-flex flex-row align-items-center mb-3">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="user_fullname">Full Name</label>
+                      <label class="form-label" for="user_fullname">Full Name  *</label>
                       <input type="text" id="user_fullname" name="user_fullname" class="form-control" />
                     </div>
                   </div>
@@ -32,14 +32,15 @@ include "header_file.php";
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="user_email">Your Email</label>
+                      <label class="form-label" for="user_email">Your Email  *</label>
                       <input type="email" id="user_email" name="user_email" class="form-control" />
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center justify-content-between mb-3">
-                    <span>Gender:</span>
+                    <span>Gender:  *</span>
                         <select name="user_gender">
+                          <option value=''>#</option>
                           <option value="Nam">Nam</option>
                           <option value="Nữ">Nữ</option>
                         </select>
@@ -47,7 +48,7 @@ include "header_file.php";
 
                   <div class="input-group justify-content-between mb-3">
                     <div class="col-md-5">
-                      Date Of Birth
+                      Date Of Birth:
                     </div>
                     <div class="col-md-15">
                       <input type="date" name="user_birth">
@@ -57,15 +58,15 @@ include "header_file.php";
                   <div class="d-flex flex-row align-items-center mb-3">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="user_pass">Password</label>
-                      <input type="password" id="user_pass" name="user_pass" class="form-control" />
+                      <label class="form-label" for="user_password">Password  *</label>
+                      <input type="password" id="user_password" name="user_password" class="form-control" />
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-3">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="password">Repeat your password</label>
+                      <label class="form-label" for="password">Repeat your password  *</label>
                       <input type="password" name="repeat_password" id="repeat_password" class="form-control" />
                     </div>
                   </div>
