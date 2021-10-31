@@ -52,9 +52,26 @@ nav{
 	border-radius: 50%;
 	cursor: pointer;
 }
+
+.no_active-custom{
+	opacity: 0.5;
+}
+
+.logout_icon{
+	display: flex;
+	justify-content: flex-end;
+	text-decoration: none;
+	font-size:19px;
+	color: #fff;
+}
+
+.logout_icon > p{
+	margin: 0 10px;
+}
+
 .search-box{
 	background: #efefef;
-	width: 500px;
+	width: 600px;
 	border-radius: 20px;
 	display: flex;
 	align-items: center;
