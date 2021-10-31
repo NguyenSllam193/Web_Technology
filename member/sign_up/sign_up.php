@@ -1,38 +1,7 @@
 <?php
 include "header_file.php";
-include "config.php";
-    if (isset($_REQUEST['user_name'])){
-    $username = stripslashes($_REQUEST['user_name']);
-    $username = mysqli_real_escape_string($conn,$username);
-
-    $fullname = stripslashes($_REQUEST['user_fullname']);
-    $fullname = mysqli_real_escape_string($conn,$fullname);
-
-    $email = stripslashes($_REQUEST['user_email']);
-    $email = mysqli_real_escape_string($conn,$email);
-
-    $password = stripslashes($_REQUEST['user_pass']);
-    $password = mysqli_real_escape_string($conn,$password);
-
-    $repeat_pass =  stripslashes($_REQUEST['user_pass']);
-    $repeat_pass = mysqli_real_escape_string($conn,$repeat_pass);
-
-    $gender = stripslashes($_REQUEST['user_gender']);
-    $gender = mysqli_real_escape_string($conn,$gender);
-
-    $birthday = stripslashes($_REQUEST['user_birth']);
-    $birthday = mysqli_real_escape_string($conn,$birthday);
-
-    if($password == $repeat_pass){
-        $query = "INSERT into `tbl_user` (user_name, user_pass, user_fullname, user_email, user_gender, user_birth) VALUES ('$username', '".md5($password)."', '$fullname ','$email', '$gender', '$birthday')";
-        $result = mysqli_query($conn,$query);
-        if($result){
-             echo "<div class='form'><h3>Bạn đã đăng ký thành công</h3><br/>Click để <a href='../login/login.php'>Đăng nhập</a></div>";
-         }
-      }else{echo "alert('sai con me may mat khau roi')";}
-
-    }else{
 ?>
+
 <section style="background: url(https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png);">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -43,7 +12,7 @@ include "config.php";
               <p class="text-primary text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
               <div class="col-md-12 col-lg-6 col-xl-8 order-2 order-lg-1">
-                <form class="mx-1 mx-md-6" method="post" class="form">
+                <form class="mx-1 mx-md-6" method="post" class="form" action="user_sign_up.php">
                   <div class="d-flex flex-row align-items-center mb-3">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
@@ -97,12 +66,12 @@ include "config.php";
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="password">Repeat your password</label>
-                      <input type="password" name="repeat_pass" id="password" class="form-control" />
+                      <input type="password" name="repeat_password" id="repeat_password" class="form-control" />
                     </div>
                   </div>
 
                   <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" name="user_check"/>
                     <label class="form-check-label" for="form2Example3">
                       I agree all statements in <a href="#!">Terms of service</a>
                     </label>
@@ -119,6 +88,6 @@ include "config.php";
     </div>
 </section>
 
-<?php  } 
+<?php
 include "footer_file.php";
 ?>

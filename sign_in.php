@@ -31,7 +31,7 @@ include "./header_file.php";
                                 Login
                             </button>
                             <p class="text-center mt-5">Don't have an account?
-                                <a href="./member/sign_up/signup.php" class="text-primary">Sign Up</a>
+                                <a href="./member/sign_up/sign_up.php" class="text-primary">Sign Up</a>
                             </p>
                             <p class="text-center text-primary">Forgot your password?</p>
                         </div>
