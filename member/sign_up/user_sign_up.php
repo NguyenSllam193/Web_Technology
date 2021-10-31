@@ -9,19 +9,16 @@ if(isset($_POST['register']) && $_POST["user_name"] != '' && $_POST["user_passwo
         $user_email = $_POST["user_email"];
         $user_gender = $_POST["user_gender"];
         if($user_password != $repeat_password){
-            echo "Nhập 2 cái mật khẩu không giống nhau mà đòi đăng ký! Gà.";
             header("location: sign_up.php");
         }
         $sql = "SELECT * FROM users WHERE us_name = '$user_name'";
         $old = mysqli_query($conn, $sql);
         if(mysqli_num_rows($old) > 0){
-            echo "Cái tài khoản đã có người lập rồi! GÀ.";
             header("location: sign_up.php");
         }
-        $sql1 = "INSERT INTO users (us_name, us_pass, us_fullname, us_gender, us_email) VALUES 
+        $sql = "INSERT INTO users (us_name, us_pass, us_fullname, us_gender, us_email) VALUES 
         ('$user_name', '".md5($user_password)."', '$user_fullname ', '$user_gender', '$user_email')";
-        mysqli_query($conn, $sql1);
-        echo "Chúc mừng bạn đã đăng ký thành công";
+        mysqli_query($conn, $sql);
         header("location: ../home_page/home_page.php");
         mysqli_close($conn);
     }else{
