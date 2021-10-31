@@ -9,17 +9,17 @@ include "./header_file.php";
                     <div class="text-center">
                         <h1 class="text-primary">Sign In</h1>
                     </div>
-                    <form action="" method="post">
+                    <form action="sign_in_process.php" method="POST">
                         <div class="p-4">
                             <div class="input-group mb-4">
                                 <span class="input-group-text bg-primary"><i
                                         class="bi bi-person-plus-fill text-white"></i></span>
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input type="text" class="form-control" placeholder="Username" name="txtAccount">
                             </div>
                             <div class="input-group mb-4">
                                 <span class="input-group-text bg-primary"><i
                                         class="bi bi-key-fill text-white"></i></span>
-                                <input type="password" class="form-control" placeholder="password">
+                                <input type="password" class="form-control" placeholder="Password" name="txtPasswd">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -27,9 +27,7 @@ include "./header_file.php";
                                     Remember Me
                                 </label>
                             </div>
-                            <button class="btn btn-primary text-center mt-4 col-md-12" type="submit">
-                                Login
-                            </button>
+                            <button class="btn btn-primary text-center mt-4 col-md-12" type="submit" name="btnLogin">Login</button>
                             <p class="text-center mt-5">Don't have an account?
                                 <a href="./member/sign_up/sign_up.php" class="text-primary">Sign Up</a>
                             </p>
