@@ -143,7 +143,7 @@
                 </div>
 
                 <p class="post-text"> <?php echo $title;?> </p>
-                <img src="images/<?php echo $img;?>" class="post-img">
+                <img src="images/<?php echo $img; ?>" class="post-img">
                 <div class="post-row">
                     <div class="activity-icons">
                         <div>
