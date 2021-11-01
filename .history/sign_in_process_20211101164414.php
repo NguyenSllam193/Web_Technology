@@ -13,17 +13,8 @@ if(isset($_POST['btnLogin']) && $_POST["txtAccount"] != '' && $_POST["txtPasswd"
         mysqli_close($conn);
     }else{
         header("Location: sign_in.php");
-    }
+    
 
-    $sql = "SELECT * FROM users WHERE us_name = '$txtAccount' AND us_pass = '$txtPasswd'";
-    $query = mysqli_query($conn, $sql);
-    $total = mysqli_num_rows($query);
-    if($total > 0){
-        header("Location: ./member/home_page/home_page.php");
-        mysqli_close($conn);
-    }else{
-        header("Location: sign_in.php");
-    }
 }else{
     header("Location: sign_in.php");
 }
