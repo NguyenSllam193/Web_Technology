@@ -148,9 +148,13 @@
                         <span><?php echo $date;?></span>
                     </div>
                 </div>
-                <a href="#">
-                    <i class="fa fa-ellipsis-v"></i>
-                </a>
+
+                <ul class="about"> <i class="fa fa-ellipsis-v"></i>
+                        <li><a class="dropdown-item" href="#">Xóa</a></li>
+                        <li><a class="dropdown-item" href="#">Chỉnh sửa</a></li>
+              </ul>
+                
+
             </div>
 
             <p class="post-text"> <?php echo $title;?> </p>
