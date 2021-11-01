@@ -310,7 +310,8 @@ nav{
 }
 .add-post-links{
 	display: flex;
-	margin-top:20px;
+	width: 100%;
+	margin-top:30px;
 }
 .add-post-links a{
 	text-decoration: none;
@@ -470,5 +471,3 @@ nav{
 	padding-left:23px;
 	background:#666;
 }
-
-
