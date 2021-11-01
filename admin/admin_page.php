@@ -176,10 +176,6 @@
 
                             <div class="card-header ">
                                 <h5 class="card-title">All User</h5>
-                                <div class="input-group no-border" style="width:300px;">
-                                <input type="text" value="" class="form-control" placeholder="Search name...">
-                                <input type="button" value="Search">
-                                </div> 
                             </div>
 
                             <div class="card-body ">
@@ -195,6 +191,7 @@
                                                 <th scope="col">Phone</th>
                                                 <th scope="col">Address</th>
                                                 <th scope="col">Date Created</th>
+                                                <th scope="col">###</th>
                                             </tr>
                                         </thead>
 
@@ -204,6 +201,7 @@
                                              if(mysqli_num_rows($res_1)>0)
                                             {
                                              while($row = mysqli_fetch_assoc($res_1)){
+                                              $us_id = $row['us_id'];
                                               $name = $row['us_fullname'];
                                               $gen = $row['us_gender'];
                                               $date = $row['us_DOB'];
@@ -221,6 +219,7 @@
                                                 <td>0<?php echo $phone;?></td>
                                                 <td><?php echo $addr;?></td>
                                                 <td><?php echo $create;?></td>
+                                                <td><a href="delete_user.php?us_id=<?php echo $us_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
                                             </tr>
                                             <?php  
                                            }
