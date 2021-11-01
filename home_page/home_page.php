@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
@@ -24,7 +22,7 @@
 
     $id = '1';
 
-    $sql = "SELECT p.po_title, p.po_image, p.po_create, u.us_fullname
+    $sql = "SELECT p.po_id, p.po_title, p.po_image, p.po_create, u.us_fullname
             FROM posts p, users u
             WHERE p.us_id = u.us_id
             AND u.us_id = $id; ";
@@ -113,25 +111,26 @@
                 <div class="write-post-container">
                     <div class="post-input-container">
                         <textarea rows="2" id="post" name="post" placeholder="   What's on your mind?"></textarea>
-                        <div class="add-post-links as">
+                        <div class="add-post-links">
                             <img src="images/photo.png">
                             <input type="file" name="hinhanh">
                         </div>
 
                     </div>
                     <div class="test" style="margin-top: 40px;">
-                    <button type="submit" name="submit" class="btn btn-success" style="padding: 10px 20px; background : blue; border-radius:10px; color:white;">POST</button>
-                    </div>                    
+                        <button type="submit" name="submit" class="btn btn-success"
+                            style="padding: 10px 20px; background : blue; border-radius:10px; color:white;">POST</button>
+                    </div>
             </form>
         </div>
 
         <!-- POST -->
 
-
         <?php
               if(mysqli_num_rows($res)>0)
               {
               while($row = mysqli_fetch_assoc($res)){
+              $po_id = $row['po_id'];
               $title = $row['po_title'];
               $img = $row['po_image'];
               $name = $row['us_fullname'];
@@ -149,11 +148,14 @@
                     </div>
                 </div>
 
-                <ul class="about"> <i class="fa fa-ellipsis-v"></i>
-                        <li><a class="dropdown-item" href="#">Xóa</a></li>
-                        <li><a class="dropdown-item" href="#">Chỉnh sửa</a></li>
-              </ul>
-                
+                <div class="about">
+                    <a class="delete" href="delete.php?po_id=<?php echo $po_id;?>">Xóa</a>
+
+                    <a class="edit" href="edit.php?po_id=<?php echo $po_id;?>">Chỉnh sửa</a>
+                </div>
+
+
+
 
             </div>
 
@@ -255,12 +257,10 @@ $img = $_FILES['hinhanh']['name'];
 
 if ($text == ""){
     ?>
-    <script language="javascript">
-
-        alert("Bạn chưa nhập gì");
-
-    </script>
-    <?php
+<script language="javascript">
+alert("Bạn chưa nhập gì");
+</script>
+<?php
 } else{
     $target_dir = "images/";
     $target_file = $target_dir . basename($img);
