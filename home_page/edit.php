@@ -1,57 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Admin</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+
+
+    <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <nav>
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="images/search.png">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="nav-user-icon online" style="display: none;" onclick="settingsMenuToggle();">
+                <img src="images/profile-pic.png">
+            </div>
+        </div>
+
+        <div class="nav-left">
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li>
+                    <img src="images/notification.png">
+                </li>
+                <li>
+                    <img src="images/inbox.png">
+                </li>
+                <li>
+                    <img src="images/video.png">
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="settings-menu">
+            <div id="dark-btn">
+                <span></span>
+            </div>
+            <div class="settings-menu-inner">
+                <div class="user-profile">
+                    <img src="images/profile-pic.png">
+                    <div>
+                        <p>John Nicholson</p>
+                        <a href="#">See Your Profile</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-profile">
+                    <img src="images/feedback.png">
+                    <div>
+                        <p>Give Feedback</p>
+                        <a href="#">Help us to improve the new design</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="settings-links">
+                    <img src="images/setting.png" class="settings-icon">
+                    <a href="#">Settings & Privacy</a>
+                    <img src="images/arrow.png" width="10px">
+                </div>
+                <div class="settings-links">
+                    <img src="images/help.png" class="settings-icon">
+                    <a href="#">Help & Support</a>
+                    <img src="images/arrow.png" width="10px">
+                </div>
+                <div class="settings-links">
+                    <img src="images/display.png" class="settings-icon">
+                    <a href="#">Display & Accessibility</a>
+                    <img src="images/arrow.png" width="10px">
+                </div>
+                <div class="settings-links">
+                    <img src="images/logout.png" class="settings-icon">
+                    <a href="#">Logout</a>
+                    <img src="images/arrow.png" width="10px">
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <div class="row">
-            <h1>Đây là chỉnh sửa bài viết</h1>
-            <dlv class="col-md-12">
-                <form action="" method="post">
 
-                    <div class="mb-3 row">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Title</label>
-                        <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="title"
-                                value="<?php echo $po_title; ?>">
+        <?php
+        $conn = mysqli_connect('localhost','root','','web');
+
+        $po_id = $_GET['po_id'];
+
+        $sql = "SELECT * FROM posts WHERE po_id = $po_id";
+        $res = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($res)==1){
+            $row = mysqli_fetch_assoc($res);
+
+            $po_title = $row['po_title'];
+            $po_img = $row['po_image'];
+        }
+    ?>
+
+        <div class="main-content">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="write-post-container">
+                    <div class="post-input-container">
+                    <textarea rows="2" id="post" name="post" placeholder="   What's on your mind?"><?php echo $po_title; ?></textarea>
+                    
+                    <img src="images/<?php echo $po_img;?>" class="post-img" style="margin-top:40px;">
+
+                    <div class="add-post-links">
+                            <label>Đổi ảnh khác</label>
+                            <input type="file" name="hinhanh" style="margin-left:20px;">
                         </div>
-                    </div>
 
-                    <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
-                        </div>
                     </div>
-
-                </form>
-            </dlv>
+                    <div class="test" style="margin-top: 40px;">
+                        <button type="submit" name="submit" class="btn btn-success"
+                            style="padding: 10px 20px; background : blue; border-radius:10px; color:white;">POST</button>
+                    </div>
+            </form>
         </div>
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>
+
+<?php
+
+if(isset($_POST['submit'])){
+
+$text = $_POST['post'];
+$img = $_FILES['hinhanh']['name'];
+
+if ($text == ""){
+?>
+
+<script language="javascript">
+alert("Bạn chưa nhập gì");
+</script>
+
+<?php
+} else{
+    $target_dir = "images/";
+    $target_file = $target_dir . basename($img);
+    move_uploaded_file($_FILES['hinhanh']['tmp_name'], $target_file);
+
+       if($img == ""){
+            $sql_1 = "UPDATE posts
+                    SET po_title = '$text'
+                    WHERE  po_id = '$po_id'";
+        } else {
+            $sql_1 = " UPDATE posts
+                    SET po_title = '$text', 
+                        po_image = '$img'
+                    WHERE  po_id = '$po_id'";
+        }
+
+        $res_1 = mysqli_query($conn, $sql_1);
+
+       ?>
+        <script>
+          location.href = '../home_page/home_page.php';
+        </script>
+        <?php
+    }
+}    
+?>
