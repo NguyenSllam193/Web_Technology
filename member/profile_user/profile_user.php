@@ -9,8 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.scss">
-    <link rel="stylesheet" href="../css/style_profile.css">
+    <link rel="stylesheet" href="css/style_profile_user.css">
 </head>
 
 <body class="bg-primary">
@@ -41,17 +40,17 @@
                     $res = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($res)==1){
-                        
+
                     $row = mysqli_fetch_assoc($res);
 
-                    $id = $row['id'];
-                    $name = $row['fullname'];
-                    $date = $row['datebirth'];
-                    $gt = $row['gender'];
-                    $phone = $row['phone'];
-                    $email = $row['email'];
-                    $addr = $row['addr'];
-                    $coun = $row['country'];
+                    $id = $row['us_id'];
+                    $name = $row['us_fullname'];
+                    $gt = $row['us_gender'];
+                    $date = $row['us_DOB'];
+                    $phone = $row['us_phone'];
+                    $email = $row['us_email'];
+                    $addr = $row['us_address'];
+                    $time = $row['us_create'];
                     }
 
                     ?>
@@ -61,12 +60,12 @@
                                 <h5><?php echo $name; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Date of birth:</label>
-                                <h5><?php echo $date; ?></h5>
-                            </div>
-
                             <div class="col-md-12 pro"><label class="labels">Gender:</label>
                                 <h5><?php echo $gt; ?></h5>
+                            </div>
+
+                            <div class="col-md-12 pro"><label class="labels">Date of birth:</label>
+                                <h5><?php echo $date; ?></h5>
                             </div>
 
                             <div class="col-md-12 pro"><label class="labels">Phone Number:</label>
@@ -81,8 +80,8 @@
                                 <h5><?php echo $addr; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Country:</label>
-                                <h5><?php echo $coun; ?></h5>
+                            <div class="col-md-12 pro"><label class="labels">Date Created:</label>
+                                <h5><?php echo $time; ?></h5>
                             </div>
                         </div>
 
