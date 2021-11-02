@@ -155,18 +155,17 @@
 
     <div class="right-sidebar">
 
-        <div class="info_user">
+    <div class="info_user" style="text-align:center;">
             <div style="
+                    
 					display:flex; 
 					justify-content:space-between;
 					margin-bottom: 20px;">
-                <h4>Info User</h4>
-                <i class="fas fa-ellipsis-h"></i>
-            </div>
+                <h4 >Info User</h4>
+           </div>
 
-            <img style="
-					margin-left: 25%;
-					border-radius: 50%;" src="./images/profile-pic.png" alt="">
+            <a href="../profile_user/profile_user.php?us_id=<?php echo $us_id;?>"><img style=" border-radius: 50%;" src="./images/profile-pic.png" alt=""></a>
+            <h2 style=" margin-top: 30px;"><?php echo $name; ?></h2>
         </div>
 
         <div class="sidebar-title">
