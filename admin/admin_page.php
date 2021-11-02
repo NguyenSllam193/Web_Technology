@@ -85,7 +85,7 @@
                         </a>
                     </li>
                     <li class="active-pro" style="margin-bottom:20px;">
-                        <a href=".../sign_up.php">
+                        <a href="logout_confirm.php">
                             <i class="nc-icon nc-spaceship"></i>
                             <p>Log Out</p>
                         </a>
@@ -286,7 +286,7 @@
             </div>
             <footer class="footer footer-black  footer-white " id="contact">
             <div class="d-flex justify-content-center">
-          <h2>Làm gì còn gì đâu mà xem, mời hảo hán cuộn lên</h2>
+          <h2>Làm gì còn gì đâu mà xem, mời hảo hán cuộn lên!!</h2>
         </div>
             </footer>
         </div>

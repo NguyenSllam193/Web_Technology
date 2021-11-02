@@ -54,7 +54,7 @@
 				</ul>
 			</div>
 		</div>
-		<a href=" #" class="logout_icon">
+		<a href="../logout_confirm.php" class="logout_icon">
 			<i class="fas fa-rocket"></i>
 			<p>LogOut</p>
 		</a>
