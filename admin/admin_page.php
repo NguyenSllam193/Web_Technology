@@ -20,11 +20,11 @@
 
     <?php
 
-    $id = $_GET['ad_id'];
+    $ad_id = $_GET['ad_id'];
 
     $conn = mysqli_connect('localhost','root','','web');
 
-    $sql = "SELECT * FROM admins WHERE ad_id = $id";
+    $sql = "SELECT * FROM admins WHERE ad_id = $ad_id";
     $res = mysqli_query($conn, $sql);
 
     $sql_1 = "SELECT * FROM users";
@@ -52,7 +52,6 @@
                 <?php
                 $admin = mysqli_fetch_assoc($res)['ad_fullname'];
                 echo $admin;
-                echo $ad_id;
                 ?>
                 </a>
             </div>
@@ -217,7 +216,7 @@
                                                 <td>0<?php echo $phone;?></td>
                                                 <td><?php echo $addr;?></td>
                                                 <td><?php echo $create;?></td>
-                                                <td><a href="delete_user.php?us_id=<?php echo $us_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
+                                                <td><a href="delete_user.php?us_id=<?php echo $us_id;?>&ad_id=<?php echo $ad_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
                                             </tr>
                                             <?php  
                                            }
@@ -269,7 +268,7 @@
                                                 <td><h4><?php echo $po_title;?></h4></td>
                                                 <td><?php echo $po_date;?></td>
                                                 <td><?php echo $us_name;?></td>
-                                                <td><a href="delete_post.php?po_id=<?php echo $po_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
+                                                <td><a href="delete_post.php?po_id=<?php echo $po_id;?>&ad_id=<?php echo $ad_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
                                             </tr>
                                             <?php  
                                            }
@@ -292,13 +291,6 @@
             </footer>
         </div>
     </div>
-
-
-
-
-
-
-
 
     <!--   Core JS Files   -->
     <script src="./assets/js/core/jquery.min.js"></script>

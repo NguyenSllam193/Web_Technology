@@ -2,6 +2,8 @@
 
 $us_id = $_GET['us_id'];
 
+$ad_id = $_GET['ad_id'];
+
 $conn = mysqli_connect('localhost','root','','web');
 
 $sql_1 = "DELETE From posts WHERE us_id = '$us_id' ";
@@ -14,7 +16,7 @@ if($res_1==true){
     $res_2 = mysqli_query($conn, $sql_2);
     
     if($res_2==true){
-    header("Location:admin_page.php");        
+    header("Location:admin_page.php?ad_id=$ad_id");        
     }
 }
 

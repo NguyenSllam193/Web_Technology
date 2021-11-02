@@ -8,7 +8,6 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
 
-
     <link rel="stylesheet" href="css/home_page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -19,78 +18,34 @@
 <body>
     <nav>
         <div class="nav-right">
+            <span style="min-width: 118px; color: #fff;">ĐỀ TÀI 15</span>
             <div class="search-box">
-                <img src="images/search.png">
-                <input type="text" placeholder="Search">
+                <a href="#"><img src="images/search.png"></a>
+                <input type="text" placeholder="Search everything ..">
             </div>
-            <div class="nav-user-icon online" style="display: none;" onclick="settingsMenuToggle();">
-                <img src="images/profile-pic.png">
-            </div>
-        </div>
 
-        <div class="nav-left">
-            <img src="images/logo.png" class="logo">
-            <ul>
-                <li>
-                    <img src="images/notification.png">
-                </li>
-                <li>
-                    <img src="images/inbox.png">
-                </li>
-                <li>
-                    <img src="images/video.png">
-                </li>
-            </ul>
-        </div>
-
-
-        <div class="settings-menu">
-            <div id="dark-btn">
-                <span></span>
-            </div>
-            <div class="settings-menu-inner">
-                <div class="user-profile">
-                    <img src="images/profile-pic.png">
-                    <div>
-                        <p>John Nicholson</p>
-                        <a href="#">See Your Profile</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="user-profile">
-                    <img src="images/feedback.png">
-                    <div>
-                        <p>Give Feedback</p>
-                        <a href="#">Help us to improve the new design</a>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="settings-links">
-                    <img src="images/setting.png" class="settings-icon">
-                    <a href="#">Settings & Privacy</a>
-                    <img src="images/arrow.png" width="10px">
-                </div>
-                <div class="settings-links">
-                    <img src="images/help.png" class="settings-icon">
-                    <a href="#">Help & Support</a>
-                    <img src="images/arrow.png" width="10px">
-                </div>
-                <div class="settings-links">
-                    <img src="images/display.png" class="settings-icon">
-                    <a href="#">Display & Accessibility</a>
-                    <img src="images/arrow.png" width="10px">
-                </div>
-                <div class="settings-links">
-                    <img src="images/logout.png" class="settings-icon">
-                    <a href="#">Logout</a>
-                    <img src="images/arrow.png" width="10px">
-                </div>
+            <div class="nav-left">
+                <ul class="no_active-custom">
+                    <li>
+                        <img src="images/notification.png">
+                    </li>
+                    <li>
+                        <img src="images/inbox.png">
+                    </li>
+                    <li>
+                        <img src="images/video.png">
+                    </li>
+                </ul>
             </div>
         </div>
+
+        <a href="home_page.php" class="logout_icon">
+            <i class="fas fa-rocket"></i>
+            <p>ReTurn</p>
+        </a>
     </nav>
 
-    <div class="container">
+    <div class="container" style="display:flex; justify-content:center;">
 
         <?php
         $conn = mysqli_connect('localhost','root','','web');
@@ -113,22 +68,23 @@
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="write-post-container">
                     <div class="post-input-container">
-                    <textarea rows="2" id="post" name="post" placeholder="   What's on your mind?"><?php echo $po_title; ?></textarea>
-                    
-                    <img src="images/<?php echo $po_img;?>" class="post-img" style="margin-top:40px;">
+                        <textarea rows="2" id="post" name="post"
+                            placeholder="   What's on your mind?"><?php echo $po_title; ?></textarea>
 
-                    <div class="add-post-links">
+                        <img src="images/<?php echo $po_img;?>" class="post-img" style="margin-top:40px;">
+
+                        <div class="add-post-links">
 
 
                             <label>Đổi ảnh khác</label>
                             <input type="file" name="hinhanh" style="margin-left:20px;">
 
 
-                        <div>
-							<button type="submit" name="submit" style="padding: 0px 30px;">Post</button>
-						</div>
+                            <div>
+                                <button type="submit" name="submit"  style="padding: 10px 30px;">Post</button>
+                            </div>
 
-                    </div>
+                        </div>
             </form>
         </div>
     </div>
@@ -172,10 +128,10 @@ alert("Bạn chưa nhập gì");
         $res_1 = mysqli_query($conn, $sql_1);
 
        ?>
-        <script>
-          location.href = 'home_page.php?us_id=<?php echo $us_id; ?>';
-        </script>
-        <?php
+<script>
+location.href = 'home_page.php?us_id=<?php echo $us_id; ?>';
+</script>
+<?php
     }
 }    
 ?>

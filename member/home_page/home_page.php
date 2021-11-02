@@ -26,9 +26,9 @@
     $sql = "SELECT p.po_id, p.po_title, p.po_image, p.po_create, u.us_fullname
             FROM posts p, users u
             WHERE p.us_id = u.us_id
-            AND u.us_id = $us_id; ";
+            AND u.us_id = $us_id;";
 
-    $res = mysqli_query($conn, $sql);
+    $res = mysqli_query($conn,$sql);
     ?>
 
 <nav>
@@ -40,7 +40,6 @@
 			</div>
 
 			<div class="nav-left">
-				<!-- <img src="images/logo.png" class="logo"> -->
 				<ul class="no_active-custom">
 					<li>
 						<img src="images/notification.png">
@@ -113,7 +112,7 @@
                 </div>
 	
                 <div class ="about">
-                    <a class="delete" href="delete_post.php?po_id=<?php echo $po_id;?>">Xóa</a>
+                    <a class="delete" href="delete_post.php?po_id=<?php echo $po_id;?>&us_id=<?php echo $us_id;?>">Xóa</a>
 
                     <a class="edit" href="edit_post.php?po_id=<?php echo $po_id;?>">Chỉnh sửa</a>
                 </div>
