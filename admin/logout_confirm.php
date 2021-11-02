@@ -43,7 +43,7 @@
         <img src="../images/chibi cry.png" alt="" class="img-logout">
         <h3>Bạn muốn đăng xuất thiệt hả!</h3>
         <div class="btn-check-logout d-flex justify-content-between">
-            <a href="../sign_in.php">
+            <a href="../index.php">
                 <input type="button" value="LogOut">
             </a>
             <a href="admin_page.php">

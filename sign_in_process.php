@@ -12,7 +12,7 @@ if(isset($_POST['btnLogin']) && $_POST["txtAccount"] != '' && $_POST["txtPasswd"
         header("Location: ./admin/admin_page.php");
         mysqli_close($conn);
     }else{
-        header("Location: sign_in.php");
+        header("Location: index.php");
     }
 
     $sql = "SELECT * FROM users WHERE us_name = '$txtAccount' AND us_pass = '$txtPasswd'";
@@ -22,9 +22,9 @@ if(isset($_POST['btnLogin']) && $_POST["txtAccount"] != '' && $_POST["txtPasswd"
         header("Location: ./member/home_page/home_page.php");
         mysqli_close($conn);
     }else{
-        header("Location: sign_in.php");
+        header("Location: index.php");
     }
 }else{
-    header("Location: sign_in.php");
+    header("Location: index.php");
 }
 ?>
