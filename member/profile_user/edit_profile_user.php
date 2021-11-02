@@ -9,8 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./scss/style.scss">
-    <link rel="stylesheet" href="../css/style_profile.css">
+    <link rel="stylesheet" href="css/style_profile_uses.css">
 </head>
 
 <body class="bg-primary">
@@ -39,23 +38,26 @@
                         <?php
                         $conn = mysqli_connect('localhost','root','','web');
 
-                        $id=$_GET['id'];
+                        $us_id=$_GET['us_id'];
 
-                        $sql = "SELECT * FROM users WHERE id = $id";
+                        $sql = "SELECT * FROM users WHERE us_id = '$us_id'";
 
                         $res = mysqli_query($conn, $sql);
-
+    
                         if(mysqli_num_rows($res)==1){
+    
                         $row = mysqli_fetch_assoc($res);
-
-                        $name = $row['fullname'];
-                        $date = $row['datebirth'];
-                        $gt = $row['gender'];
-                        $phone = $row['phone'];
-                        $email = $row['email'];
-                        $addr = $row['addr'];
-                        $coun = $row['country'];
+    
+                        $id = $row['us_id'];
+                        $name = $row['us_fullname'];
+                        $gt = $row['us_gender'];
+                        $date = $row['us_DOB'];
+                        $phone = $row['us_phone'];
+                        $email = $row['us_email'];
+                        $addr = $row['us_address'];
+                        $time = $row['us_create'];
                         }
+
                         ?>
 
 
@@ -66,16 +68,16 @@
                                     value="<?php echo $name; ?>">
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Date of birth</label>
-                                <input type="date" class="form-control" id="date" name="date"
-                                    value="<?php echo $date; ?>">
-                            </div>
-
                             <div class="col-md-12 pro"><label class="labels">Gender</label>
                                 <select class="form-control" name="gt" id="gt">
                                     <option value="Nam">Nam</option>
                                     <option value="Nữ">Nữ</option>
                                 </select>
+                            </div>
+
+                            <div class="col-md-12 pro"><label class="labels">Date of birth</label>
+                                <input type="date" class="form-control" id="date" name="date"
+                                    value="<?php echo $date; ?>">
                             </div>
 
                             <div class="col-md-12 pro"><label class="labels">Phone Number</label>
@@ -93,10 +95,6 @@
                                     value="<?php echo $addr; ?>">
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Country</label>
-                                <input type="text" class="form-control" id="coun" name="coun"
-                                    value="<?php echo $coun; ?>">
-                            </div>
                         </div>
 
                         <div class="mt-5 text-center"><button  type="submit" name="submit" class="btn btn-primary ">Save
@@ -122,35 +120,34 @@
 
     </div>
 
-    <?php include "../footer_file.php";
+<?php include "../footer_file.php";
 
 if(isset($_POST['submit']))
 {
-/*$name = $_POST['name'];
-$date = $_POST['date'];
+$name = $_POST['name'];
 $gt = $_POST['gt'];
+$date = $_POST['date'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 $addr = $_POST['addr'];
-$coun = $_POST['coun'];
 
-$sql = " UPDATE tbl_profile
-SET fullname = '$name',
-    datebirth = '$date',
-   gender = '$gt',
-   phone ='$phone',
-   addr = '$addr',
-   country  = '$coun'
-   WHERE id = '$id'";
+$sql = " UPDATE users
+SET us_fullname = '$name',
+    us_gender = '$gt',
+    us_DOB = '$date',
+    us_phone = '$phone',
+    us_email = '$email',
+    us_address = '$addr'
+   WHERE us_id = '$us_id'";
 
 $res = mysqli_query($conn, $sql);
 
-if($res==true){
-
+if($res==true){?>
+    <script>
+    location.href = 'profile_user.php?us_id=<?php echo $us_id; ?>';
+  </script>
+  <?php
 }
 
-mysqli_close($conn);*/
-
-header("Location:User/profile_user.php");
 }
 ?>

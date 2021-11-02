@@ -24,6 +24,6 @@ alert("Bạn chưa nhập gì");
         if($res_1>0){
             echo '<META HTTP-EQUIV="Refresh" Content="0; URL='.$location.'">';
         }
-    } 
+    }
 }
 ?>

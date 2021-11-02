@@ -1,8 +1,9 @@
+
 <?php
 
 session_start();
 if(!isset($_SESSION['logincheck'])){
-	header("location: ../../sign_in.php");
+	header("location: ../../index.php");
 	}
 
 ?>
@@ -29,12 +30,12 @@ if(!isset($_SESSION['logincheck'])){
     <?php
     $conn = mysqli_connect('localhost','root','','web');
 
-    $id = '1';
+    $us_id = $_GET['us_id'];
 
     $sql = "SELECT p.po_id, p.po_title, p.po_image, p.po_create, u.us_fullname
             FROM posts p, users u
             WHERE p.us_id = u.us_id
-            AND u.us_id = $id; ";
+            AND u.us_id = $us_id; ";
 
     $res = mysqli_query($conn, $sql);
     ?>
@@ -62,7 +63,7 @@ if(!isset($_SESSION['logincheck'])){
 				</ul>
 			</div>
 		</div>
-		<a href=" ../logout_confirm.php" class="logout_icon">
+		<a href="../logout_confirm.php" class="logout_icon">
 			<i class="fas fa-rocket"></i>
 			<p>LogOut</p>
 		</a>
@@ -115,7 +116,9 @@ if(!isset($_SESSION['logincheck'])){
                 <div class="user-profile">
                     <img src="images/profile-pic.png">
                     <div>
-                        <p><?php echo $name;?></p>
+                        <p><?php
+                        echo $name;
+                        ?></p>
                         <span><?php echo $date;?></span>
                     </div>
                 </div>
@@ -163,18 +166,20 @@ if(!isset($_SESSION['logincheck'])){
 
     <div class="right-sidebar">
 
-        <div class="info_user">
+        <div class="info_user" style="text-align:center;">
             <div style="
+
 					display:flex;
 					justify-content:space-between;
 					margin-bottom: 20px;">
-                <h4>Info User</h4>
-                <i class="fas fa-ellipsis-h"></i>
-            </div>
+                <h4 >Info User</h4>
+           </div>
+            <div>
+            <a href="../profile_user/profile_user.php?us_id=<?php echo $us_id;?>"><img style=" border-radius: 50%;" src="./images/profile-pic.png" alt=""></a>
 
-            <img style="
-					margin-left: 25%;
-					border-radius: 50%;" src="./images/profile-pic.png" alt="">
+            <h2 style=" margin-top: 30px;"><?php
+            echo $name;
+             ?></h2>
         </div>
 
         <div class="sidebar-title">
@@ -239,7 +244,7 @@ alert("Bạn chưa nhập gì");
     move_uploaded_file($_FILES['hinhanh']['tmp_name'], $target_file);
 
     $sql_1 = " INSERT INTO posts
-    VALUES (NULL,'$text','','$img','','$id', NULL)";
+    VALUES (NULL,'$text','','$img','','$us_id', NULL)";
 
     $res_1 = mysqli_query($conn, $sql_1);
 

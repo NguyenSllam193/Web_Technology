@@ -9,8 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.scss">
-    <link rel="stylesheet" href="../css/style_profile.css">
+    <link rel="stylesheet" href="css/style_profile_uses.css">
 </head>
 
 <body class="bg-primary">
@@ -34,60 +33,63 @@
                         <?php
                     $conn = mysqli_connect('localhost','root','','web');
 
-                    $id= '2';
+                    $us_id = $_GET['us_id'];
 
-                    $sql = "SELECT * FROM tbl_profile WHERE id = $id";
+                    $sql = "SELECT * FROM users WHERE us_id = '$us_id'";
 
                     $res = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($res)==1){
+
                     $row = mysqli_fetch_assoc($res);
 
-                    $id = $row['id'];
-                    $name = $row['fullname'];
-                    $date = $row['datebirth'];
-                    $gt = $row['gender'];
-                    $phone = $row['phone'];
-                    $email = $row['email'];
-                    $addr = $row['addr'];
-                    $coun = $row['country'];
+                    $id = $row['us_id'];
+                    $name = $row['us_fullname'];
+                    $gt = $row['us_gender'];
+                    $date = $row['us_DOB'];
+                    $phone = $row['us_phone'];
+                    $email = $row['us_email'];
+                    $addr = $row['us_address'];
+                    $time = $row['us_create'];
                     }
 
                     ?>
                         <div class="row mt-3">
 
-                            <div class="col-md-12 pro"><label class="labels">Fullname: </label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Fullname: </label>
                                 <h5><?php echo $name; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Date of birth:</label>
-                                <h5><?php echo $date; ?></h5>
-                            </div>
-
-                            <div class="col-md-12 pro"><label class="labels">Gender:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Gender:</label>
                                 <h5><?php echo $gt; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Phone Number:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Date of birth:</label>
+                                <h5><?php echo $date; ?></h5>
+                            </div>
+
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Phone Number:</label>
                                 <h5>0<?php echo $phone; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Email:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Email:</label>
                                 <h5><?php echo $email; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Address:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Address:</label>
                                 <h5><?php echo $addr; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Country:</label>
-                                <h5><?php echo $coun; ?></h5>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Date Created:</label>
+                                <h5><?php echo $time; ?></h5>
                             </div>
                         </div>
 
                         <div class="mt-5 text-center">
-                            <a href="edit_profile_user.php?id=<?php echo $id; ?>" class="btn btn-primary text-white">Edit
+                            <a href="edit_profile_user.php?us_id=<?php echo $us_id; ?>" class="btn btn-primary text-white">Edit
                                 Profile</a>
+
+                            <a href="../home_page/home_page.php?us_id=<?php echo $us_id; ?>" class="btn btn-primary text-white">Back</a>
                         </div>
 
                     </div>
