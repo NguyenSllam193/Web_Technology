@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(!isset($_SESSION['logincheck'])){
+	header("location: ../index.php");
+	}
+
+if (isset($_POST['submit']))
+{
+    unset($_SESSION['logincheck']);
+    header("location: ../index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
