@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION['usercheck'])){
+    header("Location: ../../index.php");
+}
+?>
+
+<?php
 
 $conn = mysqli_connect('localhost','root','','web');
 
