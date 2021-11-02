@@ -1,7 +1,10 @@
 <?php
+$db_host = "localhost";
+$db_user = "root";
+$db_passwd = "";
+$db_name = "web";
 
-$conn = mysqli_connect('localhost','root','','web');
-
+$conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
 if($conn){
     mysqli_query($conn, "SET NAME 'utf8'");
 }else{
