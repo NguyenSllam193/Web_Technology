@@ -328,6 +328,7 @@ nav{
 .add-post-links{
 	display: flex;
 	margin-top:20px;
+	justify-content: space-between;
 }
 .add-post-links a{
 	text-decoration: none;
@@ -341,6 +342,9 @@ nav{
 	width:20px;
 	margin-right:10px;
 }
+
+
+
 .post-container{
 	width: 100%;
 	background:var(--bg-color);

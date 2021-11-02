@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
-
-
-
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
@@ -39,8 +34,9 @@
       <!-- list  -->
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active">
-            <a href="./admin_page.html">
+          <li class="">
+            <!-- active -->
+            <a href="./admin_page.php">
               <i class="nc-icon nc-bank"></i>
               <p>ALL</p>
             </a>
@@ -81,7 +77,7 @@
           <div class="collapse navbar-collapse justify-content-between" id="navigation">
             <form>
               <div class="input-group no-border" style="width:500px;">
-                <input type="text" value="" class="form-control" placeholder="Search...">
+                <input type="text" value="" class="form-control" placeholder="Search everything ..">
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <i class="nc-icon nc-zoom-split"></i>
@@ -99,7 +95,7 @@
                 </a>
               </li>
               <li class="nav-item btn-rotate dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="nc-icon nc-bell-55"></i>
                   <p>
@@ -250,10 +246,10 @@
             <div class="card">
               <div class="card-header ">
                 <h5 class="card-title">All User</h5>
-                <div class="stats">
+                <a href="#">
                   <i class="fa fa-refresh"></i>
                   Update Now
-                </div>
+                </a>
               </div>
               <div class="card-body ">
 
@@ -312,10 +308,10 @@
             <div class="card">
               <div class="card-header">
                 <h5 class="card-title">All Post</h5>
-                <div class="stats">
+                <a href="#">
                   <i class="fa fa-refresh"></i>
                   Update Now
-                </div>
+                </a>
               </div>
               <div class="card-body ">
 
@@ -360,6 +356,9 @@
 
       </div>
       <footer class="footer footer-black  footer-white " id="contact">
+        <div class="d-flex justify-content-center">
+          <h2>Làm gì còn gì đâu mà xem, mời hảo hán cuộn lên</h2>
+        </div>
       </footer>
     </div>
   </div>
