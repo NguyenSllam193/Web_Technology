@@ -95,7 +95,7 @@
         </div>
 
         <div class="main-panel ad">
-            <div class="content">
+            <div class="content" style="margin-top: 20px;">
                 <div class="row">
 
                     <!-- ALL USERS -->
