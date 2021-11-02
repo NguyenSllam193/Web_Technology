@@ -1,5 +1,15 @@
 <?php
 
+session_start();
+if(!isset($_SESSION['logincheck'])){
+	header("location: ../../index.php");
+	}
+
+?>
+
+
+<?php
+
 $conn = mysqli_connect('localhost','root','','web');
 
 $po_id = $_GET['po_id'];
