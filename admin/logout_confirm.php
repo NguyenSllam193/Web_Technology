@@ -23,7 +23,7 @@
     min-width: 280px;
 }
 
-.btn-check-logout > input{
+.btn-check-logout > a > input{
     width: 100px;
     padding: 5px 20px;
     border: none;
@@ -33,7 +33,7 @@
     opacity: 0.8;
 }
 
-.btn-check-logout > input:hover{
+.btn-check-logout > a > input:hover{
     opacity: 1;
 }
 </style>
