@@ -155,7 +155,7 @@
 
     <div class="right-sidebar">
 
-    <div class="info_user" style="text-align:center;">
+        <div class="info_user" style="text-align:center;">
             <div style="
                     
 					display:flex; 
