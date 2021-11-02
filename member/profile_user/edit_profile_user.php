@@ -37,11 +37,11 @@
                         </div>
 
                         <?php
-                        $conn = mysqli_connect('localhost','root','','btl_web');
+                        $conn = mysqli_connect('localhost','root','','web');
 
                         $id=$_GET['id'];
 
-                        $sql = "SELECT * FROM tbl_profile WHERE id = $id";
+                        $sql = "SELECT * FROM users WHERE id = $id";
 
                         $res = mysqli_query($conn, $sql);
 

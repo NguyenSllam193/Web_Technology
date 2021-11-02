@@ -1,11 +1,7 @@
 <?php
-$db_host = "127.0.0.1";
-$db_user = "root";
-$db_passwd = "";
-$db_name = "web_technology";
-$db_gate = "80";
 
-$conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
+$conn = mysqli_connect('localhost','root','','web');
+
 if($conn){
     mysqli_query($conn, "SET NAME 'utf8'");
 }else{

@@ -20,11 +20,11 @@
 
     <?php
 
-    $id = '2';
+    $id = $_GET['ad_id'];
 
     $conn = mysqli_connect('localhost','root','','web');
 
-    $sql = "SELECT * FROM admin WHERE ad_id = $id";
+    $sql = "SELECT * FROM admins WHERE ad_id = $id";
     $res = mysqli_query($conn, $sql);
 
     $sql_1 = "SELECT * FROM users";
@@ -41,9 +41,8 @@
 
         <!-- Logo and admin_name -->
         <div class="sidebar" data-color="white" data-active-color="danger">
-            <div class="logo">
-
-                <a href="#" class="simple-text logo-mini">
+            <div class="logo"> 
+            <a href="#" class="simple-text logo-mini">
                     <div class="logo-image-small">
                         <img src="./assets/img/logo-small.png">
                     </div>
@@ -53,16 +52,17 @@
                 <?php
                 $admin = mysqli_fetch_assoc($res)['ad_fullname'];
                 echo $admin;
+                echo $ad_id;
                 ?>
                 </a>
-
             </div>
 
             <!-- list  -->
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
-                        <a href="./admin_page.html">
+                    <li class="">
+                    <!-- active -->
+                        <a href="./admin_page.php">
                             <i class="nc-icon nc-bank"></i>
                             <p>ALL</p>
                         </a>
@@ -85,8 +85,8 @@
                             <p>CONTACT</p>
                         </a>
                     </li>
-                    <li class="active-pro">
-                        <a href="#">
+                    <li class="active-pro" style="margin-bottom:20px;">
+                        <a href=".../sign_up.php">
                             <i class="nc-icon nc-spaceship"></i>
                             <p>Log Out</p>
                         </a>
@@ -96,7 +96,7 @@
         </div>
 
         <div class="main-panel ad">
-            <div class="content">
+            <div class="content" style="margin-top: 20px;">
                 <div class="row">
 
                     <!-- ALL USERS -->
@@ -113,7 +113,6 @@
                                         <div class="numbers">
                                             <p class="card-category">All User</p>
                                             <p class="card-title">
-
                                                 <!-- Số người dùng -->
                                                 <?php 
                                             $count_1 = mysqli_num_rows($res_1);
@@ -179,7 +178,6 @@
                             </div>
 
                             <div class="card-body ">
-                                <div class="card">
                                     <table class="table">
 
                                         <thead>
@@ -228,7 +226,6 @@
                                         </tbody>
 
                                     </table>
-                                </div>
                             </div>
                             <hr>
                         </div>
@@ -289,6 +286,9 @@
                 
             </div>
             <footer class="footer footer-black  footer-white " id="contact">
+            <div class="d-flex justify-content-center">
+          <h2>Làm gì còn gì đâu mà xem, mời hảo hán cuộn lên</h2>
+        </div>
             </footer>
         </div>
     </div>

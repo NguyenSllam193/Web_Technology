@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Admin</title>
+    <title>Home Page</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
 
@@ -13,96 +13,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    </head>
 
 <body>
 
     <?php
     $conn = mysqli_connect('localhost','root','','web');
 
-    $id = '1';
+    $us_id = $_GET['us_id'];
 
     $sql = "SELECT p.po_id, p.po_title, p.po_image, p.po_create, u.us_fullname
             FROM posts p, users u
             WHERE p.us_id = u.us_id
-            AND u.us_id = $id; ";
+            AND u.us_id = $us_id; ";
 
     $res = mysqli_query($conn, $sql);
     ?>
 
-    <nav>
-        <div class="nav-right">
-            <div class="search-box">
-                <img src="images/search.png">
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="nav-user-icon online" style="display: none;" onclick="settingsMenuToggle();">
-                <img src="images/profile-pic.png">
-            </div>
-        </div>
+<nav>
+		<div class="nav-right">
+			<span style="min-width: 118px; color: #fff;">ĐỀ TÀI 15</span>
+			<div class="search-box">
+				<a href="#"><img src="images/search.png"></a>
+				<input type="text" placeholder="Search everything ..">
+			</div>
 
-        <div class="nav-left">
-            <img src="images/logo.png" class="logo">
-            <ul>
-                <li>
-                    <img src="images/notification.png">
-                </li>
-                <li>
-                    <img src="images/inbox.png">
-                </li>
-                <li>
-                    <img src="images/video.png">
-                </li>
-            </ul>
-        </div>
-
-
-        <div class="settings-menu">
-            <div id="dark-btn">
-                <span></span>
-            </div>
-            <div class="settings-menu-inner">
-                <div class="user-profile">
-                    <img src="images/profile-pic.png">
-                    <div>
-                        <p>John Nicholson</p>
-                        <a href="#">See Your Profile</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="user-profile">
-                    <img src="images/feedback.png">
-                    <div>
-                        <p>Give Feedback</p>
-                        <a href="#">Help us to improve the new design</a>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="settings-links">
-                    <img src="images/setting.png" class="settings-icon">
-                    <a href="#">Settings & Privacy</a>
-                    <img src="images/arrow.png" width="10px">
-                </div>
-                <div class="settings-links">
-                    <img src="images/help.png" class="settings-icon">
-                    <a href="#">Help & Support</a>
-                    <img src="images/arrow.png" width="10px">
-                </div>
-                <div class="settings-links">
-                    <img src="images/display.png" class="settings-icon">
-                    <a href="#">Display & Accessibility</a>
-                    <img src="images/arrow.png" width="10px">
-                </div>
-                <div class="settings-links">
-                    <img src="images/logout.png" class="settings-icon">
-                    <a href="#">Logout</a>
-                    <img src="images/arrow.png" width="10px">
-                </div>
-            </div>
-        </div>
-
-    </nav>
+			<div class="nav-left">
+				<!-- <img src="images/logo.png" class="logo"> -->
+				<ul class="no_active-custom">
+					<li>
+						<img src="images/notification.png">
+					</li>
+					<li>
+						<img src="images/inbox.png">
+					</li>
+					<li>
+						<img src="images/video.png">
+					</li>
+				</ul>
+			</div>
+		</div>
+		<a href=" #" class="logout_icon">
+			<i class="fas fa-rocket"></i>
+			<p>LogOut</p>
+		</a>
+	</nav>
 
     <div class="container">
 
@@ -110,16 +66,24 @@
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="write-post-container">
                     <div class="post-input-container">
-                        <textarea rows="2" id="post" name="post" placeholder="   What's on your mind?"></textarea>
+                        <textarea rows="2" id="post" name="post" placeholder="What's on your mind?"></textarea>
                         <div class="add-post-links">
-                            <img src="images/photo.png">
-                            <input type="file" name="hinhanh">
-                        </div>
-
-                    </div>
-                    <div class="test" style="margin-top: 40px;">
-                        <button type="submit" name="submit" class="btn btn-success"
-                            style="padding: 10px 20px; background : blue; border-radius:10px; color:white;">POST</button>
+						<a href="#" class="no_active-custom">
+							<img src="images/live-video.png">
+							Live Video
+						</a>
+						<a href="#" class="no_active-custom">
+							<img src="images/feeling.png">
+							Feeling/Activity
+						</a>
+						<a href="#">
+							<img src="images/photo.png">
+							<input type="file" name="hinhanh">
+						</a>
+						<div>
+							<button type="submit" name="submit" style="padding: 0px 30px;">Post</button>
+						</div>
+					</div>
                     </div>
             </form>
         </div>
@@ -143,23 +107,20 @@
                 <div class="user-profile">
                     <img src="images/profile-pic.png">
                     <div>
-                        <p><?php echo $name;?></p>
+                        <p style="color:black;"><?php echo $name;?></p>
                         <span><?php echo $date;?></span>
                     </div>
                 </div>
+	
+                <div class ="about">
+                    <a class="delete" href="delete_post.php?po_id=<?php echo $po_id;?>">Xóa</a>
 
-                <div class="about">
-                    <a class="delete" href="delete.php?po_id=<?php echo $po_id;?>">Xóa</a>
-
-                    <a class="edit" href="edit.php?po_id=<?php echo $po_id;?>">Chỉnh sửa</a>
+                    <a class="edit" href="edit_post.php?po_id=<?php echo $po_id;?>">Chỉnh sửa</a>
                 </div>
-
-
-
 
             </div>
 
-            <p class="post-text"> <?php echo $title;?> </p>
+            <p class="post-text" style="color:black;"> <?php echo $title;?> </p>
             <img src="images/<?php echo $img;?>" class="post-img">
             <div class="post-row">
                 <div class="activity-icons">
@@ -176,17 +137,12 @@
                         1
                     </div>
                 </div>
-                <div class="post-profile-icon">
-                    <img src="images/profile-pic.png">
-                    <i class="fas fa fa-caret-down"></i>
-                </div>
             </div>
         </div>
         <?php  
-                }
-                } 
-                ?>
-
+            }
+        } 
+            ?>
     </div>
 
     <div class="right-sidebar">
@@ -267,7 +223,7 @@ alert("Bạn chưa nhập gì");
     move_uploaded_file($_FILES['hinhanh']['tmp_name'], $target_file);
 
     $sql_1 = " INSERT INTO posts
-    VALUES (NULL,'$text','$img','$id', NULL)";
+    VALUES (NULL,'$text','$img','$us_id', NULL)";
 
     $res_1 = mysqli_query($conn, $sql_1);
 

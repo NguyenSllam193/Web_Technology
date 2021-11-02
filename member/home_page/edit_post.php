@@ -117,14 +117,16 @@
                     <img src="images/<?php echo $po_img;?>" class="post-img" style="margin-top:40px;">
 
                     <div class="add-post-links">
+
+
                             <label>Đổi ảnh khác</label>
                             <input type="file" name="hinhanh" style="margin-left:20px;">
-                        </div>
 
-                    </div>
-                    <div class="test" style="margin-top: 40px;">
-                        <button type="submit" name="submit" class="btn btn-success"
-                            style="padding: 10px 20px; background : blue; border-radius:10px; color:white;">POST</button>
+
+                        <div>
+							<button type="submit" name="submit" style="padding: 0px 30px;">Post</button>
+						</div>
+
                     </div>
             </form>
         </div>
@@ -170,7 +172,7 @@ alert("Bạn chưa nhập gì");
 
        ?>
         <script>
-          location.href = '../home_page/home_page.php';
+          location.href = 'home_page.php';
         </script>
         <?php
     }

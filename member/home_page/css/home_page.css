@@ -52,9 +52,26 @@ nav{
 	border-radius: 50%;
 	cursor: pointer;
 }
+
+.no_active-custom{
+	opacity: 0.5;
+}
+
+.logout_icon{
+	display: flex;
+	justify-content: flex-end;
+	text-decoration: none;
+	font-size:19px;
+	color: #fff;
+}
+
+.logout_icon > p{
+	margin: 0 10px;
+}
+
 .search-box{
 	background: #efefef;
-	width: 350px;
+	width: 600px;
 	border-radius: 20px;
 	display: flex;
 	align-items: center;
@@ -310,8 +327,8 @@ nav{
 }
 .add-post-links{
 	display: flex;
-	width: 100%;
-	margin-top:30px;
+	margin-top:20px;
+	justify-content: space-between;
 }
 .add-post-links a{
 	text-decoration: none;
@@ -325,6 +342,9 @@ nav{
 	width:20px;
 	margin-right:10px;
 }
+
+
+
 .post-container{
 	width: 100%;
 	background:var(--bg-color);
@@ -485,3 +505,5 @@ nav{
 .about .delete:hover{
 	color: greenyellow;
 }
+
+

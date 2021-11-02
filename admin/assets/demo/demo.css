@@ -2,11 +2,6 @@
   margin-bottom: 20px;
 }
 
-.ad > .content{
-  margin-top: 20px !important; 
- }
- 
-
 .tim-white-buttons {
   background-color: #777777;
 }
@@ -170,7 +165,7 @@
 }
 
 .demo-icons ul em {
-  font-size: 12px;  
+  font-size: 12px;
 }
 
 .demo-icons ul em::before {
