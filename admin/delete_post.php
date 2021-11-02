@@ -9,7 +9,7 @@ $sql = "DELETE From posts WHERE po_id = '$po_id' ";
 $res = mysqli_query($conn, $sql);
 
 if($res==true){
-    header("Location:home_page.php");
+    header("Location:admin_page.php");
 }
 
 ?>

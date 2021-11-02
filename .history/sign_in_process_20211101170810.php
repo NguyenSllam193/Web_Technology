@@ -1,16 +1,14 @@
 <?php
-session_start();
 include "./config/config.php";
 
 if(isset($_POST['btnLogin']) && $_POST["txtAccount"] != '' && $_POST["txtPasswd"] != ''){
     $txtAccount = $_POST['txtAccount'];
     $txtPasswd = $_POST['txtPasswd'];
-
+    
     $sql = "SELECT * FROM admins WHERE ad_name = '$txtAccount' AND ad_pass = '$txtPasswd'";
     $query = mysqli_query($conn, $sql);
     $total = mysqli_num_rows($query);
     if($total > 0){
-        $_SESSION['logincheck'] = $txtAccount;
         header("Location: ./admin/admin_page.php");
         mysqli_close($conn);
     }else{
@@ -21,8 +19,7 @@ if(isset($_POST['btnLogin']) && $_POST["txtAccount"] != '' && $_POST["txtPasswd"
     $query = mysqli_query($conn, $sql);
     $total = mysqli_num_rows($query);
     if($total > 0){
-        $_SESSION['logincheck'] = $txtAccount;
-        header("Location: member/home_page/home_page.php");
+        header("Location: ./member/home_page/home_page.php");
         mysqli_close($conn);
     }else{
         header("Location: sign_in.php");
