@@ -56,38 +56,40 @@
                     ?>
                         <div class="row mt-3">
 
-                            <div class="col-md-12 pro"><label class="labels">Fullname: </label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Fullname: </label>
                                 <h5><?php echo $name; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Gender:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Gender:</label>
                                 <h5><?php echo $gt; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Date of birth:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Date of birth:</label>
                                 <h5><?php echo $date; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Phone Number:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Phone Number:</label>
                                 <h5>0<?php echo $phone; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Email:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Email:</label>
                                 <h5><?php echo $email; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Address:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Address:</label>
                                 <h5><?php echo $addr; ?></h5>
                             </div>
 
-                            <div class="col-md-12 pro"><label class="labels">Date Created:</label>
+                            <div class="col-md-12 pro" style="border-bottom:1px solid black;"><label class="labels">Date Created:</label>
                                 <h5><?php echo $time; ?></h5>
                             </div>
                         </div>
 
                         <div class="mt-5 text-center">
-                            <a href="edit_profile_user.php?id=<?php echo $id; ?>" class="btn btn-primary text-white">Edit
+                            <a href="edit_profile_user.php?us_id=<?php echo $us_id; ?>" class="btn btn-primary text-white">Edit
                                 Profile</a>
+                            
+                            <a href="../home_page/home_page.php?us_id=<?php echo $us_id; ?>" class="btn btn-primary text-white">Back</a>
                         </div>
 
                     </div>
