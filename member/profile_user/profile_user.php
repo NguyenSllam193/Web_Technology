@@ -34,13 +34,14 @@
                         <?php
                     $conn = mysqli_connect('localhost','root','','web');
 
-                    $id= '2';
+                    $us_id = $_GET['us_id'];
 
-                    $sql = "SELECT * FROM tbl_profile WHERE id = $id";
+                    $sql = "SELECT * FROM users WHERE us_id = '$us_id'";
 
                     $res = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($res)==1){
+                        
                     $row = mysqli_fetch_assoc($res);
 
                     $id = $row['id'];

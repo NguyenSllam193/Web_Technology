@@ -103,6 +103,7 @@
         if(mysqli_num_rows($res)==1){
             $row = mysqli_fetch_assoc($res);
 
+            $us_id = $row['us_id'];
             $po_title = $row['po_title'];
             $po_img = $row['po_image'];
         }
@@ -172,7 +173,7 @@ alert("Bạn chưa nhập gì");
 
        ?>
         <script>
-          location.href = 'home_page.php';
+          location.href = 'home_page.php?us_id=<?php echo $us_id; ?>';
         </script>
         <?php
     }
