@@ -46,7 +46,7 @@ if(!isset($_SESSION['usercheck'])){
             </div>
         </div>
 
-        <a href="home_page.php" class="logout_icon">
+        <a href="#" class="logout_icon">
             <i class="fas fa-rocket"></i>
             <p>ReTurn</p>
         </a>
