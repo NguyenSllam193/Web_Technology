@@ -46,7 +46,11 @@ if(!isset($_SESSION['usercheck'])){
             </div>
         </div>
 
-        <a href="#" class="logout_icon">
+        <?php
+        $us_id = $_GET['us_id'];
+        ?>
+
+        <a href="home_page.php?us_id=<?php echo $us_id;?>" class="logout_icon">
             <i class="fas fa-rocket"></i>
             <p>ReTurn</p>
         </a>
@@ -136,7 +140,7 @@ alert("Bạn chưa nhập gì");
 
        ?>
 <script>
-location.href = 'home_page.php?us_id=<?php echo $us_id; ?>';
+location.href = 'home_page.php?us_id=<?php echo $us_id;?>';
 </script>
 <?php
     }

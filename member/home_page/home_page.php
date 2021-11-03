@@ -126,7 +126,7 @@ if(!isset($_SESSION['usercheck'])){
                 <div class ="about">
                     <a class="delete" href="delete_post.php?po_id=<?php echo $po_id;?>&us_id=<?php echo $us_id;?>">Delete</a>
 
-                    <a class="edit" href="edit_post.php?po_id=<?php echo $po_id;?>">Edit</a>
+                    <a class="edit" href="edit_post.php?po_id=<?php echo $po_id;?>&us_id=<?php echo $us_id;?>">Edit</a>
                 </div>
 
             </div>
