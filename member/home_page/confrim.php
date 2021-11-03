@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION['logincheck'])){
-    header("Location: ../index.php");
-}
+if(!isset($_SESSION['usercheck'])){
+	header("Location: ../../index.php");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -41,17 +41,17 @@ if(!isset($_SESSION['logincheck'])){
 </style>
 <body>
     <?php
-    $ad_id = $_GET['ad_id'];
+    $us_id = $_GET['us_id'];
     ?>
     
     <div class="container d-flex justify-content-center align-items-center flex-column">
-        <img src="assets/img/chibi cry.png" alt="" class="img-logout">
+        <img src="images/chibi cry.png" alt="" class="img-logout">
         <h3>Bạn muốn đăng xuất thiệt hả!</h3>
         <div class="btn-check-logout d-flex justify-content-between">
             <a href="logout.php">
                 <input type="submit" name="submit" value="LogOut">
             </a>
-            <a href="admin_page.php?ad_id=<?php echo $ad_id;?>">
+            <a href="home_page.php?us_id=<?php echo $us_id;?>">
                 <input type="button" value="ReTurn">
             </a>
         </div>

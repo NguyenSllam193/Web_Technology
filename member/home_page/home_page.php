@@ -60,7 +60,8 @@ if(!isset($_SESSION['usercheck'])){
 				</ul>
 			</div>
 		</div>
-		<a href=" #" class="logout_icon">
+        
+		<a href="confrim.php?us_id=<?php echo $us_id;?>" class="logout_icon">
 			<i class="fas fa-rocket"></i>
 			<p>LogOut</p>
 		</a>
