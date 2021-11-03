@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+if(!isset($_SESSION['logincheck'])){
+    header("Location: ../index.php");
+}
+
 $us_id = $_GET['us_id'];
 
 $ad_id = $_GET['ad_id'];

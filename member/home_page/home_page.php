@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['usercheck'])){
+    header("Location: ../../index.php");
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
@@ -53,7 +60,8 @@
 				</ul>
 			</div>
 		</div>
-		<a href=" #" class="logout_icon">
+        
+		<a href="confrim.php?us_id=<?php echo $us_id;?>" class="logout_icon">
 			<i class="fas fa-rocket"></i>
 			<p>LogOut</p>
 		</a>
@@ -225,9 +233,9 @@ alert("Bạn chưa nhập gì");
 
     $res_1 = mysqli_query($conn, $sql_1);
 
-        if($res_1>0){
-            echo '<META HTTP-EQUIV="Refresh" Content="0; URL='.$location.'">';
-        }
+    if($res_1>0){
+        echo '<META HTTP-EQUIV="Refresh" Content="0; URL='.$location.'">';
+       }
     } 
 }
 ?>
