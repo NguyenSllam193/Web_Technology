@@ -93,7 +93,7 @@ if(!isset($_SESSION['logincheck'])){
                         </a>
                     </li>
                     <li class="active-pro" style="margin-bottom:20px;">
-                        <a href=".../sign_up.php">
+                        <a href="confrim.php?ad_id=<?php echo $ad_id;?>">
                             <i class="nc-icon nc-spaceship"></i>
                             <p>Log Out</p>
                         </a>
