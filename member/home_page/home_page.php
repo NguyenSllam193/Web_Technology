@@ -34,8 +34,13 @@ if(!isset($_SESSION['usercheck'])){
             FROM posts p, users u
             WHERE p.us_id = u.us_id
             AND u.us_id = $us_id;";
-
     $res = mysqli_query($conn,$sql);
+
+    $sql_1 = "SELECT * FROM users WHERE us_id = $us_id";    
+    $res_1 = mysqli_query($conn,$sql_1);
+
+    $name = mysqli_fetch_assoc($res_1)['us_fullname'];
+    
     ?>
 
 <nav>
@@ -104,7 +109,6 @@ if(!isset($_SESSION['usercheck'])){
               $po_id = $row['po_id'];
               $title = $row['po_title'];
               $img = $row['po_image'];
-              $name = $row['us_fullname'];
               $date = $row['po_create'];
               ?>
 
