@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['usercheck'])){
+    header("Location: ../../index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,11 +50,11 @@
                         $sql = "SELECT * FROM users WHERE us_id = '$us_id'";
 
                         $res = mysqli_query($conn, $sql);
-    
+
                         if(mysqli_num_rows($res)==1){
-    
+
                         $row = mysqli_fetch_assoc($res);
-    
+
                         $id = $row['us_id'];
                         $name = $row['us_fullname'];
                         $gt = $row['us_gender'];
@@ -120,7 +127,7 @@
 
     </div>
 
-<?php include "../footer_file.php";
+<?php include "../../footer_file.php";
 
 if(isset($_POST['submit']))
 {

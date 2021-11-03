@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['usercheck'])){
+    header("Location: ../../index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,7 +95,7 @@
                         <div class="mt-5 text-center">
                             <a href="edit_profile_user.php?us_id=<?php echo $us_id; ?>" class="btn btn-primary text-white">Edit
                                 Profile</a>
-
+                            
                             <a href="../home_page/home_page.php?us_id=<?php echo $us_id; ?>" class="btn btn-primary text-white">Back</a>
                         </div>
 

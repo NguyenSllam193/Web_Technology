@@ -492,4 +492,18 @@ nav{
 	background:#666;
 }
 
+.about .delete{
+	color: red;
+	text-decoration: none;
+}
+.about .edit{
+	color: blue;
+	text-decoration: none;
+}
+
+.about .edit:hover,
+.about .delete:hover{
+	color: greenyellow;
+}
+
 

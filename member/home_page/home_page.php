@@ -1,12 +1,10 @@
-
 <?php
-
 session_start();
-if(!isset($_SESSION['logincheck'])){
-	header("location: ../../index.php");
-	}
-
+if(!isset($_SESSION['usercheck'])){
+    header("Location: ../../index.php");
+}
 ?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
@@ -35,9 +33,13 @@ if(!isset($_SESSION['logincheck'])){
     $sql = "SELECT p.po_id, p.po_title, p.po_image, p.po_create, u.us_fullname
             FROM posts p, users u
             WHERE p.us_id = u.us_id
-            AND u.us_id = $us_id; ";
+            AND u.us_id = $us_id;";
 
-    $res = mysqli_query($conn, $sql);
+    $res = mysqli_query($conn,$sql);
+    $sql_1 = "SELECT * FROM users WHERE us_id = $us_id";
+    $res_1 = mysqli_query($conn,$sql_1);
+
+    $name = mysqli_fetch_assoc($res_1)['us_fullname'];
     ?>
 
 <nav>
@@ -49,7 +51,6 @@ if(!isset($_SESSION['logincheck'])){
 			</div>
 
 			<div class="nav-left">
-				<!-- <img src="images/logo.png" class="logo"> -->
 				<ul class="no_active-custom">
 					<li>
 						<img src="images/notification.png">
@@ -63,7 +64,8 @@ if(!isset($_SESSION['logincheck'])){
 				</ul>
 			</div>
 		</div>
-		<a href="../logout_confirm.php" class="logout_icon">
+
+		<a href="confrim.php?us_id=<?php echo $us_id;?>" class="logout_icon">
 			<i class="fas fa-rocket"></i>
 			<p>LogOut</p>
 		</a>
@@ -90,7 +92,7 @@ if(!isset($_SESSION['logincheck'])){
 							<input type="file" name="hinhanh">
 						</a>
 						<div>
-							<button type="submit" name="submit" style="padding: 0px 30px;">Post</button>
+							<button type="submit" name="submit" style="padding: 10px 30px;">Post</button>
 						</div>
 					</div>
                     </div>
@@ -106,7 +108,7 @@ if(!isset($_SESSION['logincheck'])){
               $po_id = $row['po_id'];
               $title = $row['po_title'];
               $img = $row['po_image'];
-              $name = $row['us_fullname'];
+            //   $name = $row['us_fullname'];
               $date = $row['po_create'];
               ?>
 
@@ -116,25 +118,20 @@ if(!isset($_SESSION['logincheck'])){
                 <div class="user-profile">
                     <img src="images/profile-pic.png">
                     <div>
-                        <p><?php
-                        echo $name;
-                        ?></p>
+                        <p style="color:black;"><?php echo $name;?></p>
                         <span><?php echo $date;?></span>
                     </div>
                 </div>
 
-                <div class="about">
-                    <a class="delete" href="delete_post.php?po_id=<?php echo $po_id;?>">Xóa</a>
+                <div class ="about">
+                    <a class="delete" href="delete_post.php?po_id=<?php echo $po_id;?>&us_id=<?php echo $us_id;?>">Xóa</a>
 
                     <a class="edit" href="edit_post.php?po_id=<?php echo $po_id;?>">Chỉnh sửa</a>
                 </div>
 
-
-
-
             </div>
 
-            <p class="post-text"> <?php echo $title;?> </p>
+            <p class="post-text" style="color:black;"> <?php echo $title;?> </p>
             <img src="images/<?php echo $img;?>" class="post-img">
             <div class="post-row">
                 <div class="activity-icons">
@@ -151,17 +148,12 @@ if(!isset($_SESSION['logincheck'])){
                         1
                     </div>
                 </div>
-                <div class="post-profile-icon">
-                    <img src="images/profile-pic.png">
-                    <i class="fas fa fa-caret-down"></i>
-                </div>
             </div>
         </div>
         <?php
-                }
-                }
-                ?>
-
+            }
+        }
+            ?>
     </div>
 
     <div class="right-sidebar">
@@ -174,12 +166,9 @@ if(!isset($_SESSION['logincheck'])){
 					margin-bottom: 20px;">
                 <h4 >Info User</h4>
            </div>
-            <div>
-            <a href="../profile_user/profile_user.php?us_id=<?php echo $us_id;?>"><img style=" border-radius: 50%;" src="./images/profile-pic.png" alt=""></a>
 
-            <h2 style=" margin-top: 30px;"><?php
-            echo $name;
-             ?></h2>
+            <a href="../profile_user/profile_user.php?us_id=<?php echo $us_id;?>"><img style=" border-radius: 50%;" src="./images/profile-pic.png" alt=""></a>
+            <h2 style=" margin-top: 30px;"><?php echo $name; ?></h2>
         </div>
 
         <div class="sidebar-title">
@@ -244,7 +233,7 @@ alert("Bạn chưa nhập gì");
     move_uploaded_file($_FILES['hinhanh']['tmp_name'], $target_file);
 
     $sql_1 = " INSERT INTO posts
-    VALUES (NULL,'$text','','$img','','$us_id', NULL)";
+    VALUES (NULL,'$text','$img','$us_id', NULL)";
 
     $res_1 = mysqli_query($conn, $sql_1);
 

@@ -1,11 +1,11 @@
 <?php
-
 session_start();
 if(!isset($_SESSION['logincheck'])){
-	header("location: ../index.php");
-	}
-
+    header("Location: ../index.php");
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,11 +28,11 @@ if(!isset($_SESSION['logincheck'])){
 
     <?php
 
-    $id = '1';
+    $ad_id = $_GET['ad_id'];
 
     $conn = mysqli_connect('localhost','root','','web');
 
-    $sql = "SELECT * FROM admins WHERE ad_id = $id";
+    $sql = "SELECT * FROM admins WHERE ad_id = $ad_id";
     $res = mysqli_query($conn, $sql);
 
     $sql_1 = "SELECT * FROM users";
@@ -49,14 +49,14 @@ if(!isset($_SESSION['logincheck'])){
 
         <!-- Logo and admin_name -->
         <div class="sidebar" data-color="white" data-active-color="danger">
-            <div class="logo">
+            <div class="logo"> 
             <a href="#" class="simple-text logo-mini">
                     <div class="logo-image-small">
                         <img src="./assets/img/logo-small.png">
                     </div>
                 </a>
 
-                <a href="#" class="simple-text logo-normal">
+                <a href="#" class="simple-text logo-normal">                   
                 <?php
                 $admin = mysqli_fetch_assoc($res)['ad_fullname'];
                 echo $admin;
@@ -93,7 +93,7 @@ if(!isset($_SESSION['logincheck'])){
                         </a>
                     </li>
                     <li class="active-pro" style="margin-bottom:20px;">
-                        <a href="logout_confirm.php">
+                        <a href="confrim.php?ad_id=<?php echo $ad_id;?>">
                             <i class="nc-icon nc-spaceship"></i>
                             <p>Log Out</p>
                         </a>
@@ -121,7 +121,7 @@ if(!isset($_SESSION['logincheck'])){
                                             <p class="card-category">All User</p>
                                             <p class="card-title">
                                                 <!-- Số người dùng -->
-                                                <?php
+                                                <?php 
                                             $count_1 = mysqli_num_rows($res_1);
                                             echo $count_1;
                                             ?>
@@ -202,7 +202,7 @@ if(!isset($_SESSION['logincheck'])){
 
                                         <tbody>
                                             <?php
-
+                   
                                              if(mysqli_num_rows($res_1)>0)
                                             {
                                              while($row = mysqli_fetch_assoc($res_1)){
@@ -215,7 +215,7 @@ if(!isset($_SESSION['logincheck'])){
                                               $addr = $row['us_address'];
                                               $create = $row['us_create'];
                                               ?>
-
+ 
                                             <tr>
                                                 <td><?php echo $name;?></td>
                                                 <td><?php echo $gen;?></td>
@@ -224,11 +224,11 @@ if(!isset($_SESSION['logincheck'])){
                                                 <td>0<?php echo $phone;?></td>
                                                 <td><?php echo $addr;?></td>
                                                 <td><?php echo $create;?></td>
-                                                <td><a href="delete_user.php?us_id=<?php echo $us_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
+                                                <td><a href="delete_user.php?us_id=<?php echo $us_id;?>&ad_id=<?php echo $ad_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
                                             </tr>
-                                            <?php
+                                            <?php  
                                            }
-                                          }
+                                          } 
                                           ?>
                                         </tbody>
 
@@ -246,7 +246,7 @@ if(!isset($_SESSION['logincheck'])){
                     <div class="col-md-12">
                         <div class="card">
                         <div class="card-header">
-                                <h5 class="card-title">All Post</h5>
+                                <h5 class="card-title">All Post</h5>                                
                         </div>
                             <div class="card-body ">
 
@@ -262,7 +262,7 @@ if(!isset($_SESSION['logincheck'])){
                                         <tbody>
 
                                             <?php
-
+                   
                                              if(mysqli_num_rows($res_2)>0)
                                             {
                                              while($row = mysqli_fetch_assoc($res_2)){
@@ -271,16 +271,16 @@ if(!isset($_SESSION['logincheck'])){
                                               $po_date = $row['po_create'];
                                               $us_name = $row['us_fullname'];
                                               ?>
-
+ 
                                             <tr>
                                                 <td><h4><?php echo $po_title;?></h4></td>
                                                 <td><?php echo $po_date;?></td>
                                                 <td><?php echo $us_name;?></td>
-                                                <td><a href="delete_post.php?po_id=<?php echo $po_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
+                                                <td><a href="delete_post.php?po_id=<?php echo $po_id;?>&ad_id=<?php echo $ad_id;?>" class="text-danger"><h5>xóa</h5></i></a> </td>
                                             </tr>
-                                            <?php
+                                            <?php  
                                            }
-                                          }
+                                          } 
                                           ?>
                                         </tbody>
                                     </table>
@@ -288,24 +288,17 @@ if(!isset($_SESSION['logincheck'])){
                             </div>
                             <hr>
                         </div>
-                    </div>
+                    </div>                  
               </div>
-
+                
             </div>
             <footer class="footer footer-black  footer-white " id="contact">
             <div class="d-flex justify-content-center">
-          <h2>Làm gì còn gì đâu mà xem, mời hảo hán cuộn lên!!</h2>
+          <h2>Làm gì còn gì đâu mà xem, mời hảo hán cuộn lên</h2>
         </div>
             </footer>
         </div>
     </div>
-
-
-
-
-
-
-
 
     <!--   Core JS Files   -->
     <script src="./assets/js/core/jquery.min.js"></script>
