@@ -13,7 +13,7 @@ if(isset($_POST['btnLogin']) && $_POST["txtAccount"] != '' && $_POST["txtPasswd"
     $ad_id = $total['ad_id'];
 
     if($total > 0){
-        $_SESSION['logincheck'] = $txtAccount;
+        $_SESSION['login_check'] = $txtAccount;
         header("Location: ./admin/admin_page.php?ad_id=$ad_id");
         mysqli_close($conn);
     }else{
@@ -25,7 +25,7 @@ if(isset($_POST['btnLogin']) && $_POST["txtAccount"] != '' && $_POST["txtPasswd"
     $total = mysqli_fetch_assoc($query);
     $us_id = $total['us_id'];
     if($total > 0){
-        $_SESSION['usercheck'] = $txtAccount;
+        $_SESSION['user_check'] = $txtAccount;
         header("Location: ./member/home_page/home_page.php?us_id=$us_id");
         mysqli_close($conn);
     }else{
