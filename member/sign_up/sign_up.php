@@ -103,6 +103,15 @@ if(isset($_POST['register'])){
             mysqli_close($conn);
         }
 
+        if($_POST["user_name"] == "" && $_POST["user_password"] == ""){
+        ?>
+        <script language="javascript">
+        alert("Bạn chưa nhập gì");
+        location.href = 'sign_up.php';
+        </script>
+        <?php
+        }
+
         $sql = "SELECT * FROM users WHERE us_name = '$user_name'";
                 
         $old = mysqli_query($conn, $sql);
@@ -118,7 +127,7 @@ if(isset($_POST['register'])){
         <script>
         location.href = '../../index.php';
         </script>
-      <?php
+        <?php
         mysqli_close($conn);
     }else{
         header("location: sign_up.php");
