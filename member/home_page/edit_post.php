@@ -88,7 +88,7 @@ if(!isset($_SESSION['usercheck'])){
 
 
                             <div>
-                                <button type="submit" name="submit"  style="padding: 10px 30px;">Post</button>
+                                <button type="submit" name="submit"  style="padding: 0px 30px;">Post</button>
                             </div>
 
                         </div>
