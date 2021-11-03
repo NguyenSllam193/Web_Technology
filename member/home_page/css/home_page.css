@@ -495,15 +495,18 @@ nav{
 .about .delete{
 	color: red;
 	text-decoration: none;
+	opacity: 0.5;
+	margin-right: 5px;
 }
 .about .edit{
-	color: blue;
+	color: rgb(0, 110, 255);
 	text-decoration: none;
+	opacity: 0.5;
 }
 
 .about .edit:hover,
 .about .delete:hover{
-	color: greenyellow;
+	opacity: 1;
 }
 
 

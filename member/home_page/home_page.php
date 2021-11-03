@@ -124,9 +124,9 @@ if(!isset($_SESSION['usercheck'])){
                 </div>
 	
                 <div class ="about">
-                    <a class="delete" href="delete_post.php?po_id=<?php echo $po_id;?>&us_id=<?php echo $us_id;?>">Xóa</a>
+                    <a class="delete" href="delete_post.php?po_id=<?php echo $po_id;?>&us_id=<?php echo $us_id;?>">Delete</a>
 
-                    <a class="edit" href="edit_post.php?po_id=<?php echo $po_id;?>">Chỉnh sửa</a>
+                    <a class="edit" href="edit_post.php?po_id=<?php echo $po_id;?>">Edit</a>
                 </div>
 
             </div>
@@ -134,7 +134,7 @@ if(!isset($_SESSION['usercheck'])){
             <p class="post-text" style="color:black;"> <?php echo $title;?> </p>
             <img src="images/<?php echo $img;?>" class="post-img">
             <div class="post-row">
-                <div class="activity-icons">
+                <div class="activity-icons no_active-custom">
                     <div>
                         <i class="fas fa-heart" style="margin-right: 5px; color: red;"></i>
                         120

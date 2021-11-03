@@ -17,7 +17,7 @@ include "header_file.php";
                                     <div class="d-flex flex-row align-items-center mb-3">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <label class="form-label" for="user_name">Your User Name *</label>
+                                            <label class="form-label" for="user_name">Your Account *</label>
                                             <input type="text" id="user_name" name="user_name" class="form-control" />
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@ if(isset($_POST['register'])){
             mysqli_close($conn);
         }
 
-        if($_POST["user_name"] == "" && $_POST["user_password"] == ""){
+        if($_POST["user_name"] == "" || $_POST["user_password"] == ""){
         ?>
         <script language="javascript">
         alert("Bạn chưa nhập gì");
@@ -121,7 +121,7 @@ if(isset($_POST['register'])){
         }
 
         $sql_1 = "INSERT INTO users VALUES 
-        (NULL,'$user_name', '".md5($user_password)."','$user_fullname','','2021-01-01','$user_email','$user_phone','',NULL)";
+        (NULL,'$user_name', '".md5($user_password)."','$user_fullname','','','$user_email','$user_phone','',NULL)";
         mysqli_query($conn, $sql_1);
         ?>
         <script>
@@ -130,7 +130,6 @@ if(isset($_POST['register'])){
         <?php
         mysqli_close($conn);
     }else{
-        header("location: sign_up.php");
         mysqli_close($conn);
     }
 ?>
