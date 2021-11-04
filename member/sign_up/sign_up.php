@@ -103,7 +103,7 @@ if(isset($_POST['register'])){
             mysqli_close($conn);
         }
 
-        if($_POST["user_name"] == "" || $_POST["user_password"] == ""){
+        if($_POST["user_name"] == "" || $_POST["user_password"] == "" || $_POST["user_fullname"]== ""){
         ?>
         <script language="javascript">
         alert("Bạn chưa nhập gì");
