@@ -69,7 +69,7 @@ if(!isset($_SESSION['logincheck'])){
                 <ul class="nav">
                     <li class="">
                     <!-- active -->
-                        <a href="./admin_page.php">
+                        <a href="#">
                             <i class="nc-icon nc-bank"></i>
                             <p>ALL</p>
                         </a>
